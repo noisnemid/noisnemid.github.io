@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta content="concepts" lang="zh" name="keywords" xml:lang="zh" />
+
+    <title>BASIC CONCEPTS &#8212; NOISNEMID&#39;s Blog: Study &amp; Discussion on PKM(Personal Knowledge Management) Computerized Tools</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="&lt;–NOISNEMID–BLOG=&lt;&lt; Study &amp; Discussion on PKM (Personal Knowledge Management) Computerized Tools" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="index.html" title="&lt;–NOISNEMID–BLOG=&lt;&lt; Study &amp; Discussion on PKM (Personal Knowledge Management) Computerized Tools"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ROOT/</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">BASIC CONCEPTS</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="basic-concepts">
+<h1>BASIC CONCEPTS<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="index-0"></span><dl class="field-list simple">
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>2020-07-03 19:59:33</p>
+</dd>
+<dt class="field-even">From</dt>
+<dd class="field-even"><p>NOISNEMID</p>
+</dd>
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>NOISNEMID</p>
+</dd>
+</dl>
+<p>It’s very important to clarify the most basic concepts at the very beginning.</p>
+<div class="section" id="knowledge">
+<h2>1.  Knowledge<a class="headerlink" href="#knowledge" title="Permalink to this headline">¶</a></h2>
+<p>Knowledge is abstract, but it becomes very specific when it’s stored in any forms that could be acquired by a person.</p>
+<p>It’s meaningless to distinguish out the difference between abstract and specific knowledge forms when one is concentrating learning something.</p>
+<p>So here I unified these two forms of knowledge into one:</p>
+<blockquote>
+<div><p>Knowledge is structured texts and related media files that stored in digital bits.</p>
+</div></blockquote>
+<p>Because the cerebrum of human chews them in whole and processes them in as many dimensions as possible after the body receives any forms of information.</p>
+</div>
+<div class="section" id="pks-pke-pkm">
+<h2>2.  PKS/PKE/PKM<a class="headerlink" href="#pks-pke-pkm" title="Permalink to this headline">¶</a></h2>
+<p>PKS = Personal Knowledge System</p>
+<p>PKE = Personal Knowledge Engineering</p>
+<p>PKM = Personal Knowledge Management</p>
+<p>These three concepts intersect each other.</p>
+<p>I prefer the following method:</p>
+<blockquote>
+<div><p>the strategy is to use engineering thinking;</p>
+<p>the means is to use the specific operations of managing;</p>
+<p>the target is to construct the system.</p>
+</div></blockquote>
+<p>In other words, PKE is the strategy thinking, PKM is the means, and PKS is the target.</p>
+</div>
+<div class="section" id="principles-of-selecting-personal-knowledge-tools">
+<h2>3.  Principles of selecting Personal Knowledge Tools<a class="headerlink" href="#principles-of-selecting-personal-knowledge-tools" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>PK = Personal Knowledge, same below.</p>
+</div></blockquote>
+<p>At the beginning I didn’t think anything about what is called ‘Unix philosophy’.
+For months and years I searched, sought, and tried out dozens of note-taking, personal-wiki-system, and other similar software.
+One day I suddenly realized all these software sucks, because they are meaningless to the knowledge itself.
+None of them is targeting a purpose of life-through learning activity.</p>
+<p>Before I tried to summarize some principles of how to select a perfect PK software, I was trying to design my own note-taking software via learning, practicing and combing Javascript/Typescript, Node.JS, Vue, MongoDB, Python…</p>
+<p>Luckily I was awakened.</p>
+<p>I realized what I need or am seeking is not ‘a perfect software’.</p>
+<p>It’s ‘a series of software’, which is a tool chain to process the knowledge as the payload of data.</p>
+<p>And what’s really shocking is that most principles I wrote to design my note-taking software coincided with the Unix Philosophy!</p>
+<p>My Principles are:</p>
+<ol class="arabic">
+<li><p>The person (user) is the first data-filter.</p>
+<p>Before anything outside is collected into the PKS, the person shall firstly filter it to choose whether the data should be appended to the personal knowledge system.</p>
+</li>
+<li><p>As few abstract layers as possible:</p>
+<blockquote>
+<div><p>No use of databases.</p>
+<p>Directly access the essence of the information:</p>
+<blockquote>
+<div><p>Extracted text and media as its original form to be edited.</p>
+<p>No use of WYSIWYG editing</p>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p>No specific software dependant:</p>
+<blockquote>
+<div><p>Open-source software &amp; Free software</p>
+<p>DSL-Like-markup-pure-text file format:</p>
+<blockquote>
+<div><ul>
+<li><p>Cross-file referring markup syntax supported:</p>
+<blockquote>
+<div><p>Further knowledge analysis possibility supported.</p>
+</div></blockquote>
+</li>
+<li><p>Stable and lazy update:</p>
+<blockquote>
+<div><p>Once designed, no update in years.</p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p>Keyword and full-text searching supported:</p>
+<blockquote>
+<div><p>Inverted index supported.</p>
+<p>RegEx supported.</p>
+</div></blockquote>
+</li>
+</ol>
+<p>Unix philosophy:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Small is beautiful.</p></li>
+<li><p>Make each program do one thing well.</p></li>
+<li><p>Choose portability over efficiency.</p></li>
+<li><p>Store data in flat text files.</p></li>
+<li><p>Use software leverage to your advantage.</p></li>
+<li><p>Use shell scripts to increase leverage and portability.</p></li>
+<li><p>Avoid captive user interfaces.</p></li>
+<li><p>Make every program a filter.</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="conclusion-standards-guides-to-personal-knowledge-tool-chain">
+<h2>4.  Conclusion: Standards Guides to Personal Knowledge tool chain<a class="headerlink" href="#conclusion-standards-guides-to-personal-knowledge-tool-chain" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>No use of cloud storage:</p>
+<blockquote>
+<div><p>All data stored locally.</p>
+</div></blockquote>
+</li>
+<li><p>Pure-text markup source file format.</p>
+<blockquote>
+<div><p>Relatively stable markup syntax.</p>
+<p>Globally (Internationally) unified file standards.</p>
+<p>Extendable API.</p>
+<p>This means:</p>
+<blockquote>
+<div><p>No specific software dependant.</p>
+<p>Source file and media files are separated:</p>
+<blockquote>
+<div><p>Every part of the data can be edited freely.</p>
+<p>Project could be shared or published in various ways.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p>Structured document hierarchy.</p></li>
+<li><p>Each software as a module which only do one part of the data processing line.</p></li>
+<li><p>Full-text and regex searching.</p></li>
+<li><p>WYTIWYG (What you think is what you get) editing:</p>
+<blockquote>
+<div><p>Previewing is a interruption to the learning and thinking.</p>
+<p>So is the WYSIWYG (What you see is what you get) editing.</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="q-a">
+<h2>5.  Q&amp;A<a class="headerlink" href="#q-a" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="why-no-use-of-database">
+<h3>5.1 Why no use of database?<a class="headerlink" href="#why-no-use-of-database" title="Permalink to this headline">¶</a></h3>
+<p>Firstly let’s confirm that we are discussing the topic ‘Personal Knowledge’ related things, and I am definitely sure that even after decades, the amount of [text] data that a person could read, write, and remember will never reach some critical cap which needs a database to optimization the searching experience.</p>
+<p>Secondly, the principles are intersecting with each other. If a database is used, it will conflict with the ‘specific software independent’ principle, with the ‘abstract layers’ principle, and with the ‘portability over efficiency’ principle.</p>
+<p>Thirdly, that amount of data is very tiny a load for most keyword-based inverted-index searching programmes, and even for some regex-engined text file searching programmes (e.g., grep, etc,.).</p>
+<p>Conclusively, a database is totally unnecessary.</p>
+</div>
+<div class="section" id="why-no-use-of-cloud-storage">
+<h3>5.2 Why no use of cloud storage?<a class="headerlink" href="#why-no-use-of-cloud-storage" title="Permalink to this headline">¶</a></h3>
+<p>Sorry, according to the nature of the commercial companies, none of a cloud storage is reliable in a rather long term.</p>
+<p>So, do you still want to use any kind of cloud-note-taking systems?</p>
+</div>
+<div class="section" id="what-is-engineering-thinking">
+<h3>5.3 What is engineering thinking?<a class="headerlink" href="#what-is-engineering-thinking" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Planing everything as a project.</p></li>
+<li><p>Design a procedure for the project.</p></li>
+<li><p>Analyze every part of the procedure completely.</p></li>
+<li><p>Disassemble procedures into non-decomposable parts.</p></li>
+<li><p>Do every part well.</p></li>
+<li><p>Assemble all the parts to the integral project.</p></li>
+</ol>
+</div>
+<div class="section" id="is-there-any-example-pk-tool-chain">
+<h3>5.4 Is there any example PK tool chain?<a class="headerlink" href="#is-there-any-example-pk-tool-chain" title="Permalink to this headline">¶</a></h3>
+<p>rST (reStructuredText) and its related softwares.</p>
+<p>rST is much better than markdown.</p>
+<p>Org-mode is another powerful competitor.</p>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">BASIC CONCEPTS</a><ul>
+<li><a class="reference internal" href="#knowledge">1.  Knowledge</a></li>
+<li><a class="reference internal" href="#pks-pke-pkm">2.  PKS/PKE/PKM</a></li>
+<li><a class="reference internal" href="#principles-of-selecting-personal-knowledge-tools">3.  Principles of selecting Personal Knowledge Tools</a></li>
+<li><a class="reference internal" href="#conclusion-standards-guides-to-personal-knowledge-tool-chain">4.  Conclusion: Standards Guides to Personal Knowledge tool chain</a></li>
+<li><a class="reference internal" href="#q-a">5.  Q&amp;A</a><ul>
+<li><a class="reference internal" href="#why-no-use-of-database">5.1 Why no use of database?</a></li>
+<li><a class="reference internal" href="#why-no-use-of-cloud-storage">5.2 Why no use of cloud storage?</a></li>
+<li><a class="reference internal" href="#what-is-engineering-thinking">5.3 What is engineering thinking?</a></li>
+<li><a class="reference internal" href="#is-there-any-example-pk-tool-chain">5.4 Is there any example PK tool chain?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">&lt;–NOISNEMID–BLOG=&lt;&lt; Study &amp; Discussion on PKM (Personal Knowledge Management) Computerized Tools</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/1_concepts.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="index.html" title="&lt;–NOISNEMID–BLOG=&lt;&lt; Study &amp; Discussion on PKM (Personal Knowledge Management) Computerized Tools"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ROOT/</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">BASIC CONCEPTS</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Ceres, Noisnemid.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

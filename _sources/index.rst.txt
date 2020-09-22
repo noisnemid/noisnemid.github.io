@@ -1,0 +1,46 @@
+.. noisnemid_blog documentation master file, created by
+   sphinx-quickstart on Mon May 25 20:12:41 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+==================================================================================================
+<--NOISNEMID--BLOG=<< Study & Discussion on PKM (Personal Knowledge Management) Computerized Tools
+==================================================================================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+Welcome, to the Noisenemid Blog.
+
+Current domain names to this site:
+============================================================
+
+https://noisnemid.github.io
+
+Blog source repository:
+https://github.com/noisnemid/noisnemid.github.io
+
+Feel free to discuss in the 'issues'
+https://github.com/noisnemid/noisnemid.github.io/issues
+
+Topics of this Blog Site
+============================================================
+
+#.  Personal Knowledge System Building, Personal Knowledge Engeering, Personal Knowledge Manangement
+#.  Principles of PKM Tools Selection
+
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    *
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

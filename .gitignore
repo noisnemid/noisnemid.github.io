@@ -1,0 +1,7 @@
+build/
+make.bat
+Makefile
+source/
+.vscode/
+.buildinfo
+source

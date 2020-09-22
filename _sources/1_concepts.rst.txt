@@ -1,0 +1,195 @@
+============================================================
+BASIC CONCEPTS
+============================================================
+
+.. index:: concepts
+
+.. meta::
+    :keywords lang=zh: concepts
+
+:Date:     2020-07-03 19:59:33
+:From:     NOISNEMID
+:Author:   NOISNEMID
+
+
+It's very important to clarify the most basic concepts at the very beginning.
+
+1.  Knowledge
+============================================================
+
+Knowledge is abstract, but it becomes very specific when it's stored in any forms that could be acquired by a person.
+
+It's meaningless to distinguish out the difference between abstract and specific knowledge forms when one is concentrating learning something.
+
+So here I unified these two forms of knowledge into one:
+
+    Knowledge is structured texts and related media files that stored in digital bits.
+
+Because the cerebrum of human chews them in whole and processes them in as many dimensions as possible after the body receives any forms of information.
+
+2.  PKS/PKE/PKM
+============================================================
+
+PKS = Personal Knowledge System
+
+PKE = Personal Knowledge Engineering
+
+PKM = Personal Knowledge Management
+
+These three concepts intersect each other.
+
+I prefer the following method:
+
+    the strategy is to use engineering thinking;
+
+    the means is to use the specific operations of managing;
+
+    the target is to construct the system.
+
+In other words, PKE is the strategy thinking, PKM is the means, and PKS is the target.
+
+
+3.  Principles of selecting Personal Knowledge Tools
+============================================================
+
+    PK = Personal Knowledge, same below.
+
+At the beginning I didn't think anything about what is called 'Unix philosophy'.
+For months and years I searched, sought, and tried out dozens of note-taking, personal-wiki-system, and other similar software.
+One day I suddenly realized all these software sucks, because they are meaningless to the knowledge itself.
+None of them is targeting a purpose of life-through learning activity.
+
+Before I tried to summarize some principles of how to select a perfect PK software, I was trying to design my own note-taking software via learning, practicing and combing Javascript/Typescript, Node.JS, Vue, MongoDB, Python...
+
+Luckily I was awakened.
+
+I realized what I need or am seeking is not 'a perfect software'.
+
+It's 'a series of software', which is a tool chain to process the knowledge as the payload of data.
+
+And what's really shocking is that most principles I wrote to design my note-taking software coincided with the Unix Philosophy!
+
+My Principles are:
+
+#.  The person (user) is the first data-filter.
+
+    Before anything outside is collected into the PKS, the person shall firstly filter it to choose whether the data should be appended to the personal knowledge system.
+
+#.  As few abstract layers as possible:
+
+        No use of databases.
+
+        Directly access the essence of the information:
+
+            Extracted text and media as its original form to be edited.
+
+            No use of WYSIWYG editing
+
+#.  No specific software dependant:
+
+        Open-source software & Free software
+
+        DSL-Like-markup-pure-text file format:
+
+            +   Cross-file referring markup syntax supported:
+
+                    Further knowledge analysis possibility supported.
+
+            +   Stable and lazy update:
+
+                    Once designed, no update in years.
+
+#.  Keyword and full-text searching supported:
+
+        Inverted index supported.
+
+        RegEx supported.
+
+
+Unix philosophy:
+
+    #.  Small is beautiful.
+    #.  Make each program do one thing well.
+    #.  Choose portability over efficiency.
+    #.  Store data in flat text files.
+    #.  Use software leverage to your advantage.
+    #.  Use shell scripts to increase leverage and portability.
+    #.  Avoid captive user interfaces.
+    #.  Make every program a filter.
+
+4.  Conclusion: Standards Guides to Personal Knowledge tool chain
+=================================================================
+
+#.  No use of cloud storage:
+
+        All data stored locally.
+
+#.  Pure-text markup source file format.
+
+        Relatively stable markup syntax.
+
+        Globally (Internationally) unified file standards.
+
+        Extendable API.
+
+        This means:
+
+            No specific software dependant.
+
+            Source file and media files are separated:
+
+                Every part of the data can be edited freely.
+
+                Project could be shared or published in various ways.
+
+#.  Structured document hierarchy.
+
+#.  Each software as a module which only do one part of the data processing line.
+
+#.  Full-text and regex searching.
+
+#.  WYTIWYG (What you think is what you get) editing:
+
+        Previewing is a interruption to the learning and thinking.
+
+        So is the WYSIWYG (What you see is what you get) editing.
+
+5.  Q&A
+============================================================
+
+5.1 Why no use of database?
+------------------------------------------------------------
+Firstly let's confirm that we are discussing the topic 'Personal Knowledge' related things, and I am definitely sure that even after decades, the amount of [text] data that a person could read, write, and remember will never reach some critical cap which needs a database to optimization the searching experience.
+
+Secondly, the principles are intersecting with each other. If a database is used, it will conflict with the 'specific software independent' principle, with the 'abstract layers' principle, and with the 'portability over efficiency' principle.
+
+Thirdly, that amount of data is very tiny a load for most keyword-based inverted-index searching programmes, and even for some regex-engined text file searching programmes (e.g., grep, etc,.).
+
+Conclusively, a database is totally unnecessary.
+
+
+5.2 Why no use of cloud storage?
+------------------------------------------------------------
+Sorry, according to the nature of the commercial companies, none of a cloud storage is reliable in a rather long term.
+
+So, do you still want to use any kind of cloud-note-taking systems?
+
+
+5.3 What is engineering thinking?
+------------------------------------------------------------
+#.  Planing everything as a project.
+#.  Design a procedure for the project.
+#.  Analyze every part of the procedure completely.
+#.  Disassemble procedures into non-decomposable parts.
+#.  Do every part well.
+#.  Assemble all the parts to the integral project.
+
+
+5.4 Is there any example PK tool chain?
+------------------------------------------------------------
+rST (reStructuredText) and its related softwares.
+
+rST is much better than markdown.
+
+Org-mode is another powerful competitor.
+
