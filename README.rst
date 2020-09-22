@@ -16,10 +16,13 @@ According to a blog with title 'Yes You Can Use GitHub Pages with Python Sphinx'
 to the official github-pages scheme are:
 
 #.  adding a '.nojekyll' empty file
-#.  add lines to 'Makefile'::
+#.  add lines to 'Makefile' (feel free to decide whether to use ``@make clean``, ``@rm ...`` lines )::
 
         github:
+            @make clean
             @make html
+            @rm ./_sources -r
+            @rm ./_static -r
             @cp -a build/html/. ./
 
 Then the site could be build with the command::
@@ -30,7 +33,7 @@ Why the publishing html files are NOT in /docs ?
 ============================================================
 :From: https://stackoverflow.com/a/62018811/13396432
 
-It's my answer.
+It's my answer:
 
     If you use a repository named '.github.io' or '.github.com', you could only use their pre-provided file structure, which means you can't select the source for the github-pages service.
 
