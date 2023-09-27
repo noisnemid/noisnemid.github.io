@@ -1,0 +1,109 @@
+/* source/_static/shadow.css for sphix rst projects */
+/* usage: to override the builtin css styles of the python's sphinx package */
+/* store this file under source/_static */
+/* add a line in conf.py: */
+/* html_style='shadow.css' */
+/* and then run */
+/* make clean */
+/* make xxxx(html, epub, etc.) */
+
+/* sometimes this file was modified and you don't want to use 'make clean' */
+/* you'll need to manually copy the newer version of this file to the build/xxx/_static folder */
+
+/* xxx.css derived from the theme name configured in source/conf.py */
+@import url("sphinxdoc.css");
+
+* {
+  font-family: liberation mono, noto color emoji, cerez, consolas, monospace,dengxian;
+}
+
+/* background-image solution thanks to  https://www.transparenttextures.com/ */
+body {
+  background-color: black;
+  /* sea blue*/
+  background-color: #00456b;
+  background-image: url("./light-aluminum.png");
+}
+
+/* ul{
+    list-style:none;
+} */
+
+div.document {
+  min-height: 400px;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.842);
+}
+
+div.body {
+  max-width: 4096px;
+}
+
+div.body a {
+  text-decoration: none;
+}
+
+.download {
+  font-style: italic;
+}
+
+em {
+  text-decoration: underline;
+}
+
+strong {
+  /* background: rgb(126, 89, 89); */
+  color: rgb(255, 51, 0);
+  text-shadow: 0 0 2px rgb(7, 204, 230);
+}
+
+/* a image centering trick */
+img {
+  box-shadow: 0 0 4px 4px rgb(167, 190, 231);
+  display: flex;
+  margin: 0 auto;
+}
+
+/* side-toc/nav-bar fix */
+/* deprecated for long toc trees cause a problem that the toc tree was not displayed completely */
+/* div.sphinxsidebar {
+  position: fixed;
+  right: 80px;
+} */
+
+/* round corner table trick begin*/
+
+table.docutils {
+  box-shadow: 0 0 5px 2px rgb(20, 56, 99) inset;
+  border-radius: 5px;
+  border-style: hidden;
+  width: 100%;
+}
+
+th,
+tr,
+td {
+  border: 0.5px solid black !important;
+  text-align: center !important;
+}
+/* round corner table trick end*/
+
+pre {
+  white-space: pre-wrap;
+  font-family: Liberation Mono, monospace;
+}
+
+code,
+pre,
+blockquote {
+  background-color: #f0f0f0;
+}
+
+/* button style for tweak.js */
+/* the key trick is this class needs to be written here explicitly to override the browser's builtin style! */
+.toggle {
+  border-radius: 4px;
+}
+
+h1 {
+    text-align: center;
+}
