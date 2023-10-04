@@ -39,259 +39,387 @@
   <section id="npkmp">
 <h1>NPKMP个人知识管理计划详解：后互联网时代个人知识管理刍议<a class="headerlink" href="#npkmp" title="Permalink to this heading">¶</a></h1>
 <p id="index-0">欢迎来到NPKMP源站点！</p>
-<p>近期更新：2023-09-27</p>
+<p>近期更新：2023-10-04</p>
+<p>迭代版本：3</p>
 <p>目录</p>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#tldr" id="id46">速览（TLDR）</a></p></li>
-<li><p><a class="reference internal" href="#id1" id="id47">声明、提示</a></p></li>
-<li><p><a class="reference internal" href="#id2" id="id48">名词</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id49">核心概念</a></p></li>
-<li><p><a class="reference internal" href="#id4" id="id50">背景：懵懂探索与尝试总结</a></p>
+<li><p><a class="reference internal" href="#tldr" id="id47">速览（TLDR）</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id48">声明、提示</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id49">楔子</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id50">演绎</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id5" id="id51">后互联网时代的信息化的阻滞</a></p></li>
-<li><p><a class="reference internal" href="#id6" id="id52">懵懂探索</a></p></li>
-<li><p><a class="reference internal" href="#id7" id="id53">尝试、思考和提炼</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id51">定义</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id52">公理</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id53">定理</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id54">推论</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id8" id="id54">关于个人知识管理的系统化构想</a></p>
+<li><p><a class="reference internal" href="#id8" id="id55">理论</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id9" id="id55">系统化思维概述</a></p></li>
-<li><p><a class="reference internal" href="#id10" id="id56">认知</a></p></li>
-<li><p><a class="reference internal" href="#id11" id="id57">实体</a></p></li>
-<li><p><a class="reference internal" href="#id12" id="id58">关系</a></p></li>
-<li><p><a class="reference internal" href="#id13" id="id59">方法</a></p></li>
-<li><p><a class="reference internal" href="#id14" id="id60">模型</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id56">实体</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id10" id="id57">纯文本</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id58">二进制数据</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id15" id="id61">实例</a></p>
-<ul>
-<li><p><a class="reference internal" href="#id16" id="id62">实体</a></p>
-<ul>
-<li><p><a class="reference internal" href="#restructuredtext-rst" id="id63">reStructuredText (rST)</a></p></li>
-<li><p><a class="reference internal" href="#yaml" id="id64">YAML</a></p></li>
-<li><p><a class="reference internal" href="#rst" id="id65">rST实施细节</a></p>
-<ul>
-<li><p><a class="reference internal" href="#id17" id="id66">工程同构目录结构规范</a></p></li>
-<li><p><a class="reference internal" href="#id18" id="id67">文件名规范</a></p></li>
-<li><p><a class="reference internal" href="#id19" id="id68">字段设计规范</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id59">关系</a></p></li>
+<li><p><a class="reference internal" href="#id13" id="id60">方法</a></p></li>
+<li><p><a class="reference internal" href="#id14" id="id61">模型</a></p></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#id20" id="id69">关系</a></p>
+<li><p><a class="reference internal" href="#id15" id="id62">实例</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id21" id="id70">自然分类法</a></p>
+<li><p><a class="reference internal" href="#id16" id="id63">实体</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id22" id="id71">应用场景</a></p></li>
-<li><p><a class="reference internal" href="#id23" id="id72">设计目的</a></p></li>
-<li><p><a class="reference internal" href="#id24" id="id73">设计思想</a></p></li>
-<li><p><a class="reference internal" href="#id25" id="id74">应用原则</a></p>
+<li><p><a class="reference internal" href="#restructuredtext-rst" id="id64">reStructuredText (rST)</a></p></li>
+<li><p><a class="reference internal" href="#yaml" id="id65">YAML</a></p></li>
+<li><p><a class="reference internal" href="#rst" id="id66">rST实施细节</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id26" id="id75">一、动态性</a></p></li>
-<li><p><a class="reference internal" href="#id27" id="id76">二、自然性</a></p></li>
-<li><p><a class="reference internal" href="#id28" id="id77">三、直观性</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#id29" id="id78">分类实践举例与探讨</a></p>
-<ul>
-<li><p><a class="reference internal" href="#id30" id="id79">文学类</a></p></li>
-<li><p><a class="reference internal" href="#id31" id="id80">计算机类</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#id32" id="id81">核心要义：“无中生有”起手式</a></p></li>
-<li><p><a class="reference internal" href="#id33" id="id82">自然分类对文件备份操作的影响</a></p></li>
-<li><p><a class="reference internal" href="#id34" id="id83">感想</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#id35" id="id84">文件链接</a></p></li>
-<li><p><a class="reference internal" href="#id36" id="id85">对象存储</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#id37" id="id86">方法</a></p>
-<ul>
-<li><p><a class="reference internal" href="#id38" id="id87">编辑器</a></p></li>
-<li><p><a class="reference internal" href="#id39" id="id88">工具链</a></p></li>
-<li><p><a class="reference internal" href="#id40" id="id89">备份</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#id41" id="id90">模型</a></p>
-<ul>
-<li><p><a class="reference internal" href="#id42" id="id91">灵活</a></p></li>
-<li><p><a class="reference internal" href="#id43" id="id92">妥协</a></p></li>
-<li><p><a class="reference internal" href="#id44" id="id93">可检索化</a></p></li>
+<li><p><a class="reference internal" href="#id17" id="id67">同构化的工程目录结构规范</a></p></li>
+<li><p><a class="reference internal" href="#id18" id="id68">文件名规范</a></p></li>
+<li><p><a class="reference internal" href="#id19" id="id69">字段设计规范</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id45" id="id94">后记</a></p></li>
-<li><p><a class="reference internal" href="#indices-and-tables" id="id95">索引表 / Indices and tables</a></p></li>
+<li><p><a class="reference internal" href="#id20" id="id70">关系</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id21" id="id71">自然分类法</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id22" id="id72">应用场景</a></p></li>
+<li><p><a class="reference internal" href="#id23" id="id73">设计目的</a></p></li>
+<li><p><a class="reference internal" href="#id24" id="id74">设计思想</a></p></li>
+<li><p><a class="reference internal" href="#id25" id="id75">应用原则</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id26" id="id76">一、动态性</a></p></li>
+<li><p><a class="reference internal" href="#id27" id="id77">二、自然性</a></p></li>
+<li><p><a class="reference internal" href="#id28" id="id78">三、直观性</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id29" id="id79">分类实践举例与探讨</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id30" id="id80">文学类</a></p></li>
+<li><p><a class="reference internal" href="#id31" id="id81">计算机类</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id32" id="id82">核心要义：“无中生有”起手式</a></p></li>
+<li><p><a class="reference internal" href="#id33" id="id83">自然分类对文件备份操作的影响</a></p></li>
+<li><p><a class="reference internal" href="#id34" id="id84">感想</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id35" id="id85">文件链接</a></p></li>
+<li><p><a class="reference internal" href="#id36" id="id86">对象存储</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id37" id="id87">方法</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id38" id="id88">编辑器</a></p></li>
+<li><p><a class="reference internal" href="#id39" id="id89">工具链</a></p></li>
+<li><p><a class="reference internal" href="#id40" id="id90">备份</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id41" id="id91">模型</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id42" id="id92">灵活</a></p></li>
+<li><p><a class="reference internal" href="#id43" id="id93">妥协</a></p></li>
+<li><p><a class="reference internal" href="#id44" id="id94">一切皆文本（一切信息可检索）</a></p></li>
+<li><p><a class="reference internal" href="#id45" id="id95">分形</a></p></li>
+<li><p><a class="reference internal" href="#id46" id="id96">迭代</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#indices-and-tables" id="id97">索引表 / Indices and tables</a></p></li>
 </ul>
 </nav>
 <section id="tldr">
-<h2><a class="toc-backref" href="#id46" role="doc-backlink">速览（TLDR）</a><a class="headerlink" href="#tldr" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id47" role="doc-backlink">速览（TLDR）</a><a class="headerlink" href="#tldr" title="Permalink to this heading">¶</a></h2>
 <p>NPKMP = NOISNEMID Personal Knowledge Management Plan , NOISNEMID个人知识管理计划。</p>
+<p>NPKMP旨在构建高效的、有无限可能的个人知识管理工程化实践参考。</p>
 <p>NPKMP认为：</p>
 <ol class="arabic simple">
-<li><p>电子笔记是后互联网时代个人知识管理的核心；</p></li>
+<li><p>基于本地纯文本标记语言和工具链的电子笔记体系是后互联网时代个人知识管理的较优方案；</p>
+<ol class="arabic simple">
+<li><p>使用纯文本标记语言作为笔记核心载体</p></li>
+<li><p>使用纯文本标记语言为二进制数据单独存储元数据和内容描述信息</p></li>
+<li><p>使用纯文本编辑软件（含语言支持）作为核心工具</p></li>
+<li><p>使用不同的专业软件处理二进制数据</p></li>
+<li><p>选择一种分类法作为主动检索依赖</p></li>
+<li><p>使用脚本语言对数据和工具进行链接</p></li>
+</ol>
+</li>
 <li><p>笔记的根本目的是“检索”，其它“记录”、“利用”、“分享”等皆衍生自“检索”；</p></li>
-<li><p>优先使用纯文本标记语言作为笔记核心载体：reStructuredText(rST)、 Markdown(MD)、 OrgMode、……</p></li>
-<li><p>优先使用纯文本编辑软件（含语言支持）作为核心工具：VisualStudio Code(VsCode)、 Vim(系列)、EMACS、Obsidian、 Typora……</p></li>
-<li><p>优先选择任意一种分类模式作为主动检索依赖，例如本方案中的自然分类法、国图法、杜威进行法……</p></li>
-<li><p>优先使用脚本语言对文本和工具进行辅助管理：Python、 Yaml、Javascript(Typescript)、 Lua……</p></li>
-<li><p>务必做好存储备份：NAS、RAID、云存储……</p></li>
+<li><p>做好备份。</p></li>
 </ol>
 </section>
 <section id="id1">
-<h2><a class="toc-backref" href="#id47" role="doc-backlink">声明、提示</a><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id48" role="doc-backlink">声明、提示</a><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p>本站专注于以下主题：</p>
 <ol class="arabic simple">
 <li><p>个人知识管理</p></li>
-<li><p>个人知识管理工具链设计与示例</p></li>
+<li><p>个人知识管理工具链</p></li>
+<li><p>个人知识管理工程化</p></li>
 </ol>
 <p>此网站内所有内容全部原创首发于GitHub，凡在全互联网范围内任何地方发布时间晚于本后台仓库中代码提交时间的，均视为相关内容的副本。欢迎转载但请注明原作者和（或）指向此处的链接。</p>
 <p>当前网址 <a class="reference external" href="https://noisnemid.github.io">https://noisnemid.github.io</a></p>
-<p>Github 的“讨论”机制：<a class="reference external" href="https://github.com/noisnemid/noisnemid.github.io/discussions">https://github.com/noisnemid/noisnemid.github.io/discussions</a></p>
-<p>此站本身是遵循 NPKMP 理念并使用 restructuredText (rST) 构建网站的实例，源代码在 <a class="reference external" href="https://github.com/noisnemid/noisnemid.github.io">https://github.com/noisnemid/noisnemid.github.io</a> 。</p>
+<p>讨论 <a class="reference external" href="https://github.com/noisnemid/noisnemid.github.io/discussions">https://github.com/noisnemid/noisnemid.github.io/discussions</a></p>
+<p>此站本身即基于 NPKMP 中提到的 restructuredText (rST)  所构建，源码在 <a class="reference external" href="https://github.com/noisnemid/noisnemid.github.io">https://github.com/noisnemid/noisnemid.github.io</a> 。</p>
 </section>
 <section id="id2">
-<h2><a class="toc-backref" href="#id48" role="doc-backlink">名词</a><a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
-<ol class="arabic">
-<li><p>NPKMP</p>
-<p>NPKMP即“NOISNEMID个人知识管理计划”（ NOISNEMID Personal Knowledge Management Plan ），是由本人构想的一种用于<strong>个人用途</strong>的基于<strong>个人计算机</strong>的<strong>知识管理</strong>实践模型，简而言之，NPKMP是一种个人知识管理实践探索和理论尝试。</p>
-</li>
-<li><p>后互联网时代</p>
-<p>指社交网络兴起后，国际互联网（Internet）逐渐走向保守、割裂、封闭的情况。</p>
-<p>其重要特征是信息可检索性急速下降，与“互联”之本意渐行渐远。</p>
-</li>
-<li><p>个人知识管理(PKM)</p>
-<p>即 PKM, Personal Knowledge Management。主要涉及个人直接或间接相关的广义知识文本化、数据化、可检索化的结构化组织管理理论与实践。</p>
-<p>PKM有许多衍生概念，如：</p>
-<p>PKS（Personal Knowledge System）个人知识管理体系，与广义上的PKM基本相同。</p>
-<p>PKE（Personal Knowledge Environment）个人知识环境，特指PKM的软硬件环境。</p>
-</li>
-<li><p>计划(Plan)</p>
-<p>是对PKM中涉及的实体、关系、方法和理论的规划、探索、讨论、思考与迭代。</p>
-</li>
-</ol>
-</section>
-<section id="id3">
-<h2><a class="toc-backref" href="#id49" role="doc-backlink">核心概念</a><a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
-<ol class="arabic">
-<li><p>NPKMP的目标</p>
-<p>打造 <strong>个人终身学习工具</strong> 。</p>
-</li>
-<li><p>NPKMP的出发点</p>
-<p>关注解决或缓解个人知识管理中的一些问题：</p>
+<h2><a class="toc-backref" href="#id49" role="doc-backlink">楔子</a><a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>NPKMP的想法萌发于后互联网时代对个人知识管理曲折实践的归纳。</p>
+<p>计算机技术很年轻，特别是相对于人类有文字记载的浩瀚光阴。数千年的浩繁卷帙大多仍未数字化。而使用计算机管理知识历史则更短。长期以来计算机领域对计算型任务的关注度远高于对知识管理这种服务型任务。智能手机时代使得个人电脑的市占有率再创新低，计算机信息管理素养相关技能渐成冷门。</p>
+<p>最初接触电脑时头脑中并无任何知识管理的概念，时称初级文件管理为“资料存储”。拥有第一台电脑后很长时间及随着资料增多才逐渐有意识地进行资料的结构化管理，并进行了一些初级的探索。时值“后互联网时代”到来，高效信息管理的需求更加迫切。</p>
+<p>在使用个人电脑对信息进行下载、管理的过程中，发现鲜有以终身学习为目的的商业软件。商业化的逻辑天然导向消极的结果。常见问题如：</p>
 <ul class="simple">
 <li><p>由于工具软件停更、付费计划变更而不得不 <strong>频繁更换工具</strong> 而致 <strong>数据无法复用</strong> 的问题</p></li>
+<li><p>在线数据导出受限</p></li>
+<li><p>线上存储空间不足</p></li>
 <li><p>编辑效率低、体验差</p></li>
 <li><p>功能、结构扩展性差</p></li>
 <li><p>因<strong>结构调整困难</strong>导致<strong>分类方案</strong>选择困难</p></li>
 <li><p>检索困难</p></li>
 <li><p>发布/分享方式 、途径选择困难</p></li>
 </ul>
-<p>从本质上讲，上述原因中，第一条是其它所有问题的根源，因为最后几乎所有的问题都可以被归结为对于时间或物质成本的妥协。在多次迭代后，NPKMP尝试从根本上解决这一问题：</p>
-<p>目前，NPKMP尝试通过通过一系列<strong>脚本</strong>将多个<strong>工具软件</strong>联结为一条或多条针对<strong>纯文本文件</strong>的操作流程。</p>
+<p>其中，第一条是其它问题的根源，其它问题可以视为对于时间或物质成本的妥协。于是，一些工具选型标准逐渐形成，例如强制要求云端存储的将被一票否决、 使用非标准数据格式的一票否决……</p>
+<p>在对信息载体、工具等的选型标准进行归纳后发现有将之进一步提炼、抽象和结构化的可能，于是参考公理化、自然演绎、层次化和系统思维等思路，在自底向上地从实践向理论总结的基础上，尝试自顶向下地从理论到实践的角度阐述利用个人电脑管理信息的思路和技巧，并将实践的结果作为论据打包为一套尝试通过通过一系列<strong>脚本</strong>将多个<strong>工具软件</strong>联结为一条或多条针对<strong>纯文本标记语言文件</strong>的操作流程，称为“ “Plan”。</p>
+<p>也许读者对于上述过程有所共鸣，但并未系统归纳，是以成文，以便交流。</p>
+</section>
+<section id="id3">
+<h2><a class="toc-backref" href="#id50" role="doc-backlink">演绎</a><a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>自评：“公理化方法”的表，“自然演绎法”的里。；）</p>
+<section id="id4">
+<h3><a class="toc-backref" href="#id51" role="doc-backlink">定义</a><a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p>知识</p>
+<p>在知识管理领域：</p>
+<p>广义的知识定义指包含了知识的各种形式和类型，涵盖了个体和组织内部以及外部的知识资源。它强调知识的多样性和广泛性，包括了经验、技能、信息、洞察、价值观等多个方面。广义的知识定义关注知识的获取、创建、共享、应用和保护等方面，以促进学习、创新和决策的能力提升。</p>
+<p>狭义的知识定义更加具体和局限，通常指的是明确的、结构化的知识，以及对知识的形式化表示和存储。这包括了知识文档、数据库、专家系统、规则和模型等形式化的知识表达方式。狭义的知识定义主要关注知识的组织、存储、检索和应用，强调知识的可操作性和效率。</p>
+<p>在NPKMP中，主要关注狭义知识，特别是指具检索可能性的、强烈的可文本化的信息。显然广义的和狭义的知识定义并不是互相排斥的，而是相互补充的。在实践中，知识管理通常综合考虑广义定义和狭义定义，以满足组织的综合知识管理需求。</p>
+<p>在知识管理领域，广义的知识定义强调了知识的多样性和广泛性，包括了个体和组织内外的各种形式的知识资源。这种定义认识到知识的复杂性和多维性，并强调知识管理需要关注从多个来源获取知识、有效地组织和共享知识，以及支持学习和创新的能力。狭义的知识定义更加侧重于具体的、形式化的知识表达和应用，强调知识的存储、组织、利用信息技术和工具来管理和应用知识。这种定义更加注重知识的可操作性和效率，强调知识管理系统和工具的建立和应用。</p>
 </li>
-<li><p>NPKMP的核心理念</p>
-<p>核心理念是“系统化”。</p>
-<p>即，尽量从结构化的角度，充分考虑可能遇到的问题：</p>
+<li><p>知识管理</p>
+<p>知识管理是一种系统化的方法和实践，旨在有效地获取、创建、组织、存储、共享和应用知识，以支持个体或组织的学习、创新和决策。具体来说，知识管理包括以下方面的活动和过程：</p>
+<p>知识获取：通过各种渠道和方法获取外部知识资源，如研究报告、市场调研、专家意见等，以及内部知识资源，如员工经验、项目经验等。</p>
+<p>知识创建：通过内部协作、研发活动、创新实践等方式创造新的知识，包括新的概念、模型、解决方案等。</p>
+<p>知识组织：将获取和创建的知识进行分类、整理和结构化，以便有效地组织和存储，例如知识库、文档管理系统、标签分类等。</p>
+<p>知识存储：将知识以适当的形式保存和记录，包括文档、数据库、专家系统、经验库等，以便后续使用和访问。</p>
+<p>知识共享：促进知识的共享和传播，通过内部沟通、协作平台、社交网络等方式，使知识能够被广泛访问和利用。</p>
+<p>知识应用：将知识应用于实际问题和决策中，支持组织的学习、创新和持续改进，提高工作效率和竞争力。</p>
+<p>知识评估：对知识进行评估和审查，以确定其质量、可靠性和适用性，帮助组织决策和改进知识管理过程。</p>
+<p>知识管理旨在通过有效地获取、组织和应用知识来提高组织的学习能力、创新能力和竞争力。它涉及到人员、流程和技术的综合考虑，需要有效的沟通、协作和文化支持。</p>
+<p>需要注意的是，知识管理是一个动态的过程，随着时间和需求的变化，知识会不断更新、演进和调整。因此，知识管理需要持续的关注和管理，以适应不断变化的环境和需求。</p>
+</li>
+</ol>
+<ol class="arabic" start="2">
+<li><p>个人知识管理(PKM)</p>
+<p>即 PKM, Personal Knowledge Management。主要涉及个人直接或间接相关的广义知识文本化、数据化、可检索化的结构化组织管理理论与实践。</p>
+<p>个人知识管理（Personal Knowledge Management，简称PKM）是指个体对自己的知识资产进行有效管理和利用的过程和方法。它强调个体在日常生活和工作中主动地获取、组织、存储、共享和应用知识，以提高学习能力、工作效率和个人发展。</p>
+<p>个人知识管理涉及以下方面的活动和实践：</p>
+<p>知识获取：主动寻找和获取有价值的知识资源，如书籍、文章、网上资源、培训课程等，通过学习和经验积累来扩展个人知识。</p>
+<p>知识组织：将个人获取的知识进行整理、分类、标记和归档，以便于后续的查找和使用。这可以包括使用笔记、思维导图、标签、文件夹等工具和方法。</p>
+<p>知识存储：选择适当的方式将知识保存和存储，可以是电子文档、笔记本、云存储等，确保知识的可靠性和可访问性。</p>
+<p>知识整合：将不同来源的知识进行整合和关联，形成更完整和综合的知识结构，帮助个体更好地理解和应用知识。</p>
+<p>知识共享：与他人分享和交流个人的知识和经验，可以通过社交媒体、博客、会议等方式，促进知识的传播和协作。</p>
+<p>知识应用：将个人的知识应用于实际问题和任务中，提供解决方案、支持决策和创新，提高个人的工作效率和质量。</p>
+<p>反思与学习：通过反思和总结个人的经验和学习，不断改进和调整知识管理的方法和实践，提高个人的学习能力和适应能力。</p>
+<p>个人知识管理注重个体对自己知识资产的主动管理和利用，帮助个体更好地应对信息爆炸、快速变化的环境和日益复杂的任务。它强调个体的自主性、自律性和自我组织能力，以实现个人的学习、成长和发展，增强自身对知识的掌握，增加内化知识的比例，增强内化知识的熟练度，创造新知识。将信息归类的能力属于内化知识，检索到的具体文档、文本内容，属于外化知识。</p>
+<p>需要注意的是，个人知识管理是一个个体化的过程，每个人的知识需求和偏好可能有所不同，因此个体可以根据自身情况和目标，选择适合自己的知识管理方法和工具。</p>
+<p>PKM有许多衍生概念，不再一一赘述，如：</p>
+<p>PKS（Personal Knowledge System）个人知识管理体系，与广义上的PKM基本相同。</p>
+<p>PKE（Personal Knowledge Environment）个人知识环境，特指PKM的软硬件环境。</p>
+</li>
+</ol>
+<ol class="arabic" start="4">
+<li><p>后互联网时代</p>
+<p>指社交网络兴起后，国际互联网（Internet）逐渐走向保守、割裂、封闭的情况。</p>
+<p>其重要特征是信息可检索性急速下降，与“互联”之本意渐行渐远。</p>
+<p>所谓“后互联网时代”并非学术化概念。早期人们通过互联网获取大量信息最可堪一用的途径是 Telnet BBS ，然后是1990年被发明的HTML，互联网资讯开始爆发增长。如今互联网上数千亿网页中充斥着各种几经转手的碎片化信息，文件发布格式、复杂多变的前端技术框架、圈地自萌的社交网络商业逻辑、信息密度低下的视频数据泛滥等，都仿佛昭示互联网的发展已偏离其初衷，互联网信息可检索性、信噪比正在变得更差。后互联网时代为个人提供了更多的学习知识的可能，也制造了许多挑战和困难。随着互联网信息和知识传播分享日趋保守，在通用强人工智能技术取得突破且被大量应用之前，精确检索互联网内容竟变得越来越困难。</p>
+<p>互联网需要一次重生。</p>
+</li>
+<li><p>系统思维</p>
+<p>由于个人知识管理的动态化特征，建议使用系统思维进行应对。</p>
+<p>系统思维指这样一种认识论：将对象按照“实体、关系、方法、模型”的层次进行分析处理，类似于我国“道、法、术、器”的理念，或者经典的DIKW模型。</p>
+<p>其重要的构成要素包括：</p>
 <ul class="simple">
-<li><p>高持续性</p></li>
+<li><p>整体性</p></li>
+<li><p>结构化</p></li>
+<li><p>标准化</p></li>
+<li><p>工程化</p></li>
+<li><p>动态性</p>
+<ul>
 <li><p>灵活性</p>
 <ul>
-<li><p>动态性</p></li>
-<li><p>可伸缩数据规模</p></li>
-<li><p>可放缩架构</p></li>
-<li><p>可迭代：处于不断变化和演化中，请求来自各行各业人士的指导、交流，以共同完善</p></li>
+<li><p>可伸缩的数据规模</p></li>
+<li><p>可随时调整的架构</p></li>
 </ul>
 </li>
-<li><p>规整性</p></li>
+<li><p>演化、迭代和成长</p></li>
+<li><p>高持续性</p></li>
 </ul>
+</li>
+</ul>
+</li>
+<li><p>NPKMP</p>
+<p>NPKMP即“NOISNEMID个人知识管理计划”（ NOISNEMID Personal Knowledge Management Plan ），是由笔者所构想的一种用于<strong>个人用途</strong>的基于<strong>个人计算机</strong>的<strong>知识管理</strong>实践模型，简而言之，NPKMP是个人知识管理的实践、探索，以及理论尝试。</p>
+<p>其中：</p>
+<blockquote>
+<div><p>NOISNEMID其实就是一个通过反拼单词生成的SEO字符串，用于唯一化命名，无实际意义。</p>
+<p>PLAN即计划，是对PKM中涉及的实体、关系、方法和理论的规划、探索、讨论与思考的实例打包。</p>
+</div></blockquote>
+<p>具体地，基于系统思维，NPKMP属于一种基于「纯文本标记语言」和「弱结构数据存储」与「灵活的文本组织结构」的「个人知识管理尝试」和「数字资讯管理实践」。</p>
+<p>NPKMP的目标是打造 <strong>个人终身学习工具（链）</strong> 。</p>
 </li>
 </ol>
 </section>
-<section id="id4">
-<h2><a class="toc-backref" href="#id50" role="doc-backlink">背景：懵懂探索与尝试总结</a><a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
 <section id="id5">
-<h3><a class="toc-backref" href="#id51" role="doc-backlink">后互联网时代的信息化的阻滞</a><a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
-<p>计算机技术仍很年轻，特别是相对于人类有文字记载的数浩瀚光阴。其间卷帙浩繁，大多文本数字化程度几近于零。有人戏言：</p>
-<blockquote>
-<div><p>书籍是人类进步的阶梯，电子书是人类进步的电梯。</p>
-</div></blockquote>
-<p>使用计算机来管理知识的历史相比计算机发展更加年轻。在相当长的时期内计算机都更加专注于计算型任务，而对于使用计算机进行知识管理的服务型任务，特别是对个人知识管理的关注度仍然很低。个人电脑——特指能够进行较大屏幕和键盘鼠标高效操纵的个人桌面型电脑（含笔记本类型的电脑）——的普及仍然任重道远。计算机信息管理方面的能力素养呈现较大参差。</p>
-<p>因此尝试从“自顶向下”和“自底向上”两个角度上分享在多年间个人知识管理实践中的一些心得，如能帮助到一二人，或得只言片语之指点则喜不自胜矣！</p>
+<h3><a class="toc-backref" href="#id52" role="doc-backlink">公理</a><a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p>知识是无限的。</p>
+<p>知识是全信息。是一切一切包含物质、能量运转的全部过往现在与未来的原理和法则。</p>
+</li>
+<li><p>人力是有限的。</p>
+<p>人的体力、脑力、认知都是有限的。</p>
+</li>
+</ol>
 </section>
 <section id="id6">
-<h3><a class="toc-backref" href="#id52" role="doc-backlink">懵懂探索</a><a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
-<p>最初所接触的PC来自学校机房与网吧。彼时尚未接触没有知识管理的概念，甚至都不称之为知识，一般称“资料存储”。当拥有了第一台电脑后很长时间，随着资料增多，才开始有意进行资料的结构化管理。然后，开始遇到一些困难。常言道，</p>
-<blockquote>
-<div><p>当迷路时，请望向来处。</p>
-</div></blockquote>
-<p>早期人们通过互联网获取大量信息最可堪一用的途径是 Telnet BBS ，然后是1990年被发明的HTML。经过三十余年发展的HTML如今已“面目全非”，2023年的国际互联网上充斥数千亿HTML页面，但是其信息可检索性已经低到令人发指，信噪比已经惨不忍睹。特别是随着视频内容的泛滥和各大网络平台圈地自萌画地为牢的趋势日渐加剧，数据量膨胀速度使信息密度迅速降低，同时信息互通程度更加保守。在通用型强人工智能技术取得突破及被大量应用之前，对互联网内容的精确检索仍然是一项巨大挑战。</p>
-<p>互联网上充斥着各种二手、三手的碎片化知识。基于HTML的现代网站技术特别是前端技术已经变成一个真正字面意义上的怪物，五花八门的工程形式和各种在线交互技术已与最初HTML的发明目的大相径庭。商业化的浸染使得知识的传播和分享受到巨大阻滞，更不用说目前在简中互联网上各种的自我设限的机制，包括但不限于各种平台化、垄断化的现代互联网商业逻辑。</p>
-<p>互联网，本应为构建一个信息的黄金时代而生，奈何其作为一项技术，无法脱离人类社会的底层逻辑单独存在，逐渐变成一种我们无法认同的模样。毕竟它也是由人来运营的。</p>
-<p>与互联网的疯狂变形相映成趣的，是以离线文件形式进行信息交互中所涉及的成千上万的文件格式。本质上通过网络传递的信息，只有两种数据：可供人类直接阅读的纯文本数据，以及可供计算机处理的二进制数据（处理后以图文或其它媒体形式被人类解读，或交由计算机进行处理）。但是仅仅是以图文为例，就有数以千百计的格式。无法想象，在一个千兆光纤已经开始入户的时代，人类的信息交流渠道之狭隘、信息交换效率之低，简直是对“信息革命”的无上讽刺。</p>
+<h3><a class="toc-backref" href="#id53" role="doc-backlink">定理</a><a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p>知识是动态的。</p>
+<p>基于公理1，知识的运动状态隐含于无限之中。无时无刻不在运动、变化，它在增长、繁衍；旧的知识消亡被替代，新的知识涌现或创生。</p>
+</li>
+<li><p>知识是个体化的。</p>
+<p>基于公理2，知识是由个体主体根据其独特的经验、认知和理解所构建和理解的。个体的知识管理需要考虑到个体差异和多样性。</p>
+</li>
+<li><p>知识是涉及认知过程的。</p>
+<p>知识的获取、组织和应用涉及个体的认知过程，包括感知、理解、记忆、思考、推理和解决问题等。个体知识管理需要考虑到这些认知过程的特点和优化方法。</p>
+</li>
+<li><p>人无法认知知识的全貌。</p>
+<p>“对知识的描述”，不是“知识”本体。</p>
+<p>知识是无结构的。描述知识本身是不可能的。要描述知识，必须选择一个视角，这意味着选定一个维度。任何维度的描述都不是“知识”本身，而只能一个空间断面，一个时间的、瞬息的快照。</p>
+<p>描述知识所用的视角、模型，可能是无限的，也应该是无限的。</p>
+</li>
+<li><p>知识管理需要有效的工具和技术支持。</p>
+<p>个体知识管理可以借助适当的工具和技术来帮助知识的获取、组织、存储和共享。这些工具和技术可以包括笔记应用、信息管理系统、协作平台等。</p>
+</li>
+<li><p>知识管理需要灵活性和适应性。</p>
+<p>个体知识管理需要具备灵活性和适应性，能够适应不同的知识需求、变化的环境和新的学习机会。个体应该持续学习和调整知识管理策略。</p>
+</li>
+</ol>
 </section>
 <section id="id7">
-<h3><a class="toc-backref" href="#id53" role="doc-backlink">尝试、思考和提炼</a><a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
-<p>在对文本信息进行下载、管理的过程中，发现商业软件鲜有面以终身学习为目的进行设计的，盖因其构建的基础是当代商业逻辑，这一切必然导向一个消极的结果。在使用过多款各类知识管理或笔记软件后，最终几乎都由于商业软件逻辑的问题而被迫转向其它软件，包括但不限于软件公司倒闭、付费计划变更、在线服务限制数据导出、数据规模受限等。于是，在长期实践后，作为个人知识管理软件的选择标准，一票否决的一个标准就是：在线式服务。一切强制要求将笔记存储于云端的，直接否决。</p>
-<p>在此基础上，总结在笔记软件使用中的一些问题，在较长时间对笔记软件的折腾中，开始注意到“知识管理”这一课题及领域，然后在查询一些资料了有了一些简要的思考，形成一些阶段性的结论，或者说思考的阶段性成果，这算是NPKMP的萌芽。</p>
+<h3><a class="toc-backref" href="#id54" role="doc-backlink">推论</a><a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p>知识的不断增长使得知识管理变得更为重要。</p>
+<p>对知识的认知和使用是知识的一部分，也是生命能够在宇宙立足的根本倚仗。对知识的管理、对知识管理的研究、知识管理工具的创造，是能够使得知识更加高效力的重要保障和催化剂。</p>
+</li>
+<li><p>选择适当的视角和模型是描述知识的必要条件。</p>
+<p>“分类”的目的是为了检索，是应对人类记忆力限制的一种方法。在对PKM进行如上粗浅思考的过程中，长久以来萦绕于心的关于“知识”的图景不断变化，其身影也如迷雾中的远山逐渐显露身形。据说人类无法想象出从未见过的事物，所以随后的描述必然有局限性。</p>
+<p>知识的典型描述模型之一是“星球或引力模型”，即“知识”内部的“知识集”如无数星河电转，各“知识集”的联系如引力一般，远小近大。3D标签球这一可视化效果可提供一种简单却直观的展示。</p>
+<img alt="3d-tag-sphere-demo" src="_images/index1696172769450.png" />
+<p>类似地，可以在其它维度上分析，可以是“树”模型：层次分明，包含与被包含。</p>
+<p>可以是以下任意模型“学习金字塔、费曼技巧、刻意练习、RIA阅读法、二八定律思考力：5W1H分析法、思维导图、SWOT分析、10/10/10法则创造力：六顶思考帽、头脑风暴、逆向思维、类比思维、SCAMPER创新思维设计力：设计思维、最小可靠性产品（MVP）、峰终定律、AARRR漏斗模型、上瘾（HOOK）模型共情力：五大圈层模型、高效倾听模型、情绪ABC模型、乔哈里视察、冰山模型故事力：故事五要素、SCQA模型、SRAR模型、STORY模型、“英雄之族”模型领导力：领导力梯队、情景领导力模型、GROW教练模型、管理4C模型、TOPIC模型整合力：杠杆思维、POA行动、系统思维、整合思维模型、多元思维模型……”（来自网络）</p>
+<p>总之可以是任何你能想象得到的对信息的组织和利用形式。</p>
+</li>
+<li><p>知识管理需要多样化的方法和工具支持。</p></li>
+<li><p>个体的知识管理需要不断学习和调整。</p></li>
+<li><p>弱依赖</p>
+<p>说白了就是，未来知识管理的理论和工具必然发生巨大变化，因此数据本身必须对于工具呈现“弱依赖”性，必须保证：</p>
+<ul class="simple">
+<li><p>在未来使用新工具管理旧数据的可能性</p></li>
+<li><p>在未来迁移数据的低开销</p></li>
+</ul>
+</li>
+<li><p>可检索性</p>
+<p>必须保证所有进入知识库数据的可检索性。确切地说，不管使用什么工具或手段，必须可以通过自动化手段取回数据。</p>
+</li>
+<li><p>同构</p>
+<p>个人知识管理的最小组织单元和更大尺度的组织单元呈现相同结构，不同个体之间的信息组织结构呈现相同结构，从而最大化保障信息融合、共享的效率。</p>
+</li>
+<li><p>工程化 ⭐⭐⭐⭐⭐</p>
+<p>通过工程化操作最大化个人知识管理的效率，具体包括：</p>
+<ul class="simple">
+<li><p>流程化的操作序列</p></li>
+<li><p>链式工具组合</p></li>
+<li><p>刻意的技能训练</p></li>
+</ul>
+<p>需要特别指出的是，随着推论序号的增加，其在具体PKM实践中的操作比重正在上升。刻意的“工程化技能训练”将在日常的、高频次的、高强度的知识管理实践中发挥决定性作用。甚至可以说，<strong>整个NPKMP都是为了实现这一目标而构建的</strong>。</p>
+</li>
+<li><p>人脑参与性</p>
+<p>“个人”应当作为PKM的一环被考虑。</p>
+<p>NPKMP中具体指，人应作为知识的第一道滤波器，首先过滤低质信息、无关信息进入知识库。</p>
+</li>
+</ol>
 </section>
 </section>
 <section id="id8">
-<h2><a class="toc-backref" href="#id54" role="doc-backlink">关于个人知识管理的系统化构想</a><a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id55" role="doc-backlink">理论</a><a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
 <section id="id9">
-<h3><a class="toc-backref" href="#id55" role="doc-backlink">系统化思维概述</a><a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
-<p>此文中，系统化思维指：</p>
-<p>将对象按照“实体、关系、方法、模型”的层次进行分析处理。类似我国“道、法、术、器”的理念。</p>
-</section>
+<h3><a class="toc-backref" href="#id56" role="doc-backlink">实体</a><a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
+<p>NPKMP的实体分为两种：纯文本和二进制。</p>
 <section id="id10">
-<h3><a class="toc-backref" href="#id56" role="doc-backlink">认知</a><a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
-<p>一是对知识本身的认知重构。需要认识到知识的“无结构”特性，不要尝试使用任何知识框架、分类体系去对“知识”本身进行界定，“分类”的目的是为了检索，是应对人类记忆力限制的一种方法。</p>
-<p>二是对知识管理的认知革新。要认识到知识管理的本质是增强自身对知识的掌握，增加内化知识的比例，增强内化知识的熟练度，创造新知识。要认识到哪些知识是内化的，哪些是外化的。具体可以认为：遇到一个问题，“可将之归类为某类知识并将之定位到具体知识分类框架上”的这份能力，属于内化知识，而需要查询到具体文档并阅读的时候，被查询到的、无法完整复述的文本，属于外化知识。</p>
-<p>三是知识、知识管理是一个迭代更新的过程。同样的，NPKMP本身会随着时间推移演化，它的演化与变化会与使用者的认知能力强相关。在当前本人的认知水平下才有了前前后后的这一系列文字。例如当前版本的NPKMP可认为是：</p>
-<blockquote>
-<div><p>一种基于「纯文本标记语言」和「弱结构数据存储」与「灵活的文本组织结构」的「个人知识管理尝试」和「数字化资讯管理实践」。</p>
-</div></blockquote>
-<p>注意该表述中规避了“体系”、“系统”两个词汇，盖因目前我认为这还只是一种尝试，而尚难称之为体系或系统。</p>
+<h4><a class="toc-backref" href="#id57" role="doc-backlink">纯文本</a><a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h4>
+<p>纯文本是为了增强数据可复用性、可检索性和安全性：</p>
+<ul class="simple">
+<li><p>可复用性</p>
+<ul>
+<li><p>可方便地将纯文本应用于多种工作流中。</p></li>
+</ul>
+</li>
+<li><p>可检索性</p>
+<ul>
+<li><p>可施加几乎任意的检索方法或工具，至少包括：正则表达式、索引、数据库、自制脚本……</p></li>
+</ul>
+</li>
+<li><p>安全性</p>
+<ul>
+<li><p>主要指数据保存层面的安全性：即使硬盘损坏，也可通过直读字节数据恢复的技术手段，将信息最大程度还原；</p></li>
+<li><p>将要指对工作的依赖性低。杜绝因特定软件消亡导致的潜在麻烦；</p></li>
+</ul>
+</li>
+</ul>
+<p>NPKMP中纯文本包含两种：</p>
+<ul>
+<li><p>纯文本文件格式的笔记内容</p>
+<p>用于存储人类可自然阅读的信息。</p>
+</li>
+<li><p>元数据与扩展描述信息</p>
+<p>主要是为了增强二进制数据的可检索性，弥补操作系统对二进制数据检索功能和性能上的缺失。</p>
+<p>实现思路是在二进制文件旁边或者约定的路径，用纯文本文件存储其元数据及描述性信息。随后用户既可以通过脚本方便地对这些数据进行结构化处理，又可以直接对其进行纯文本检索，甚至可以对其进行索引。反观如果不进行这样的操作，要想实现对二进制文件的检索，只能通过文件名或操作系统本身的元数据检索功能进行检索，其准确性和效果一般来说都是比较差的。</p>
+</li>
+</ul>
 </section>
 <section id="id11">
-<h3><a class="toc-backref" href="#id57" role="doc-backlink">实体</a><a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
-<p>NPKMP的实体是以纯文本文件形式存在的笔记内容。或曰，纯文本是NPKMP的最重要的载体。</p>
-<p>纯文本化本质目的是为了增强数据可控性，基于“不停地收敛和切割可控性”的原则。</p>
-<p>技术上的优点包括：</p>
-<ul class="simple">
-<li><p>即使硬盘损坏，也可通过直读字节数据恢复的技术手段，将信息最大程度还原；</p></li>
-<li><p>对编辑软件不产生强依赖，杜绝因特定软件消亡导致必须进行数据重写的潜在麻烦；</p></li>
-<li><p>可以方便地施加几乎任意的检索方法或工具，至少包括：正则表达式、索引、数据库、自制脚本……</p></li>
-</ul>
-<p>在NPKMP中，“纯文本化”一般包含两个重要方向：</p>
-<p>一是可供直接阅读的笔记的载体。</p>
-<p>二是二进行数据的描述性信息的存储（可将此视为一种笔记）。为了增强二进行数据的可检索性，可在二进制文件旁边或者约定的路径，用纯文本文件存储其元数据及描述性信息，例如，存储于 YAML 格式的文件中。此时有趣的事情发生了：你既可以通过脚本方便地对这些数据进行结构化处理，又可以直接对其进行纯文本检索，甚至可以对其进行索引。反观如果不进行这样的操作，要想实现对二进制文件的检索，只能通过文件名或操作系统本身的元数据检索功能进行检索，其准确性和效果一般来说都是比较差的。</p>
+<h4><a class="toc-backref" href="#id58" role="doc-backlink">二进制数据</a><a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h4>
+<p>非纯文本内容的其它数据。</p>
+</section>
 </section>
 <section id="id12">
-<h3><a class="toc-backref" href="#id58" role="doc-backlink">关系</a><a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id59" role="doc-backlink">关系</a><a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h3>
 <p>NPKMP中，“关系”是指分类法。</p>
 <p>“关系”不一定是唯一的，或者说，必然是多样的，所以不必追求一种关系结构，这同时意味着，必须在“实体”的设计阶段，就提前为多种“关系”的应用提供可能。</p>
 <p>分类法千变万化，但本质都是为了提升检索效率，更加确切地说，是为了提升“主动”检索效率。注意，是主动。</p>
 </section>
 <section id="id13">
-<h3><a class="toc-backref" href="#id59" role="doc-backlink">方法</a><a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h3>
-<p>NPKMP中，“方法”指应用于“实体”和“关系”的具体工具和操作。</p>
+<h3><a class="toc-backref" href="#id60" role="doc-backlink">方法</a><a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h3>
+<p>NPKMP中，“方法”指应用于“实体”和“关系”的具体工具、操作和流程。</p>
+<p>工具：对不同实体进行操作需要的专门工具，如软件、硬件工具。</p>
+<p>操作：指具体的操作内容。</p>
+<p>流程：NPKMP中主要指工程化方法，即对于操作的统筹与安排，形成程序化、工程化操作的规则。</p>
 </section>
 <section id="id14">
-<h3><a class="toc-backref" href="#id60" role="doc-backlink">模型</a><a class="headerlink" href="#id14" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id61" role="doc-backlink">模型</a><a class="headerlink" href="#id14" title="Permalink to this heading">¶</a></h3>
 <p>指代NPKMP本身。</p>
 <p>NPKMP可以是具体的一套实例，也可以是抽象的一个概念。</p>
-<p>NPKMP本身也是一个变化的存在，其形态可以随时加以变化以适应当前的认知层次、技术发展阶段。</p>
+<p>NPKMP本身也是变化的，以适应不同阶段的认知层次和PKM理论与技术发展水平。</p>
 </section>
 </section>
 <section id="id15">
-<h2><a class="toc-backref" href="#id61" role="doc-backlink">实例</a><a class="headerlink" href="#id15" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id62" role="doc-backlink">实例</a><a class="headerlink" href="#id15" title="Permalink to this heading">¶</a></h2>
 <p>以下为具体的一套可供直接套用的 NPKMP 例子。</p>
-<p>有意思的是，它本质上，是当你面对一些模棱两可的选择产生纠结时，提供一些取舍的建议。</p>
+<p>你可以将之当作是当你面对一些模棱两可的选择产生纠结时的一些取舍建议（俗称“选型标准”）。</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>层次</p></th>
@@ -355,14 +483,14 @@ Code</p></td>
 </table>
 <p>以下为详细阐述。</p>
 <section id="id16">
-<h3><a class="toc-backref" href="#id62" role="doc-backlink">实体</a><a class="headerlink" href="#id16" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id63" role="doc-backlink">实体</a><a class="headerlink" href="#id16" title="Permalink to this heading">¶</a></h3>
 <section id="restructuredtext-rst">
-<h4><a class="toc-backref" href="#id63" role="doc-backlink">reStructuredText (rST)</a><a class="headerlink" href="#restructuredtext-rst" title="Permalink to this heading">¶</a></h4>
+<h4><a class="toc-backref" href="#id64" role="doc-backlink">reStructuredText (rST)</a><a class="headerlink" href="#restructuredtext-rst" title="Permalink to this heading">¶</a></h4>
 <p>优点：主要用于替换MarkDown，相对MarkDown，rST的优点主要体现在：</p>
 <ul class="simple">
-<li><p>标准化：目前rST只有一种实现，不需要像MarkDown一样需要考虑不同实现或版本的兼容；</p></li>
+<li><p>标准化：目前rST只有一种标准，不似MarkDown有多种标准；</p></li>
 <li><p>更丰富的标记和指令系统；</p></li>
-<li><p>更加醒目的可读性；</p></li>
+<li><p>标题更加醒目，元素更加明确；</p></li>
 <li><p>明确支持跨文件双链标记，粒度为“段落级”。</p></li>
 </ul>
 <p>缺点：相对MarkDown支持的工具略少，但现在的足够使用。</p>
@@ -391,18 +519,18 @@ Code</p></td>
 </ul>
 </section>
 <section id="yaml">
-<h4><a class="toc-backref" href="#id64" role="doc-backlink">YAML</a><a class="headerlink" href="#yaml" title="Permalink to this heading">¶</a></h4>
+<h4><a class="toc-backref" href="#id65" role="doc-backlink">YAML</a><a class="headerlink" href="#yaml" title="Permalink to this heading">¶</a></h4>
 <p>YAML作为二进制文件的元数据和扩展信息主要载体。</p>
 <p>目的是为每一个需要进行元数据管理的文件（例如PDF形式的图书、视频文件、音乐文件等）。</p>
-<p>虽然媒体文件可以带有自己的元数据，但是它需要进行读取且功能有限，在成熟的 Yaml 面前显得非常简陋。</p>
+<p>虽然媒体文件可以带有自己的元数据，但是它需要进行读取且功能有限，在成熟的 Yaml 面前显得非常简陋。由于媒体信息刮削器所生成的nfo格式常常有所不同，可以通过脚本对其进行统一转换，以便进行检索。</p>
 <p>Yaml 可以通过诸多工具（专门的软件或脚本程序，例如Python等），对其中存储的数据进行提取、解析、修改，方便地实现元数据的检索、统计等管理。</p>
-<p>字段设计以文件名、各种类型的时期时间、各种类型的附加信息，以及最重要的分类和标签信息。同时，标签可以进行更加复杂的数据结构设计，但是笔者建议统各类字段以数组/List为主，方便进行伸缩扩展。</p>
+<p>字段设计以文件名、各种类型的时期时间、各种类型的附加信息，以及最重要的分类和标签信息。同时，标签可以进行更加复杂的数据结构设计，各类字段可主要以数组/List为主，方便进行伸缩扩展。</p>
 <p>可见，相比直接在二进制数据上附加元数据和扩展信息，使用Yaml作为标准化的二进制数据元数据和扩展信息管理载体，避免了对原文件进行修改、二进制文件版本更新等场景下所引入的的巨大的I/O开销，并提升了检索效率。</p>
 </section>
 <section id="rst">
-<h4><a class="toc-backref" href="#id65" role="doc-backlink">rST实施细节</a><a class="headerlink" href="#rst" title="Permalink to this heading">¶</a></h4>
+<h4><a class="toc-backref" href="#id66" role="doc-backlink">rST实施细节</a><a class="headerlink" href="#rst" title="Permalink to this heading">¶</a></h4>
 <section id="id17">
-<h5><a class="toc-backref" href="#id66" role="doc-backlink">工程同构目录结构规范</a><a class="headerlink" href="#id17" title="Permalink to this heading">¶</a></h5>
+<h5><a class="toc-backref" href="#id67" role="doc-backlink">同构化的工程目录结构规范</a><a class="headerlink" href="#id17" title="Permalink to this heading">¶</a></h5>
 <p>基于对rST和sphinx的理解，经过多次实验后，提出一种基于“同构”思想的目录结构规范。</p>
 <p>“目录设计”不涉及具体分类设计，只提出对于文件组织模式的具体建议，并解释这样做的好处。</p>
 <p>首先是sphinx工程的设置，务必设置为源文件单独存放。</p>
@@ -429,8 +557,8 @@ Code</p></td>
 <p>最后，这样做目的，一是统一化的目录规范可以减少笔记创建时的心智开销。二是可以方便笔记的分享和融合。由他人分享的同构目录，可以直接通过文件拷贝的方式置入当前笔记中，避免了对当前笔记工程、通过分享下载的笔记项这两者的额外修改，大大提升操作效率。</p>
 </section>
 <section id="id18">
-<h5><a class="toc-backref" href="#id67" role="doc-backlink">文件名规范</a><a class="headerlink" href="#id18" title="Permalink to this heading">¶</a></h5>
-<p>所有纯文本文件和二进制文件，按照统一的命名范式进行。此规范由用户自行设计指定，此处给出一个示例：</p>
+<h5><a class="toc-backref" href="#id68" role="doc-backlink">文件名规范</a><a class="headerlink" href="#id18" title="Permalink to this heading">¶</a></h5>
+<p>纯文本文件和二进制文件按照统一的命名范式进行。此规范由用户自行设计指定，此处给出一个示例：</p>
 <ol class="arabic simple">
 <li><p>文件名中仅出现以下字符：</p>
 <ol class="arabic simple">
@@ -446,9 +574,9 @@ Code</p></td>
 <p>除上述字符之外的所有全角符号、半角符号，全部不允许出现，包括空格、各类引号、括号、冒号、分号、波浪号、斜线、问号、感叹号、逗号、货币符号、&amp;符号、百分号、#号、星号、分隔点、点、线符号，不管文件系统是否支持，均不出现于文件名，以实现最大限度的容错、兼容。</p>
 </section>
 <section id="id19">
-<h5><a class="toc-backref" href="#id68" role="doc-backlink">字段设计规范</a><a class="headerlink" href="#id19" title="Permalink to this heading">¶</a></h5>
+<h5><a class="toc-backref" href="#id69" role="doc-backlink">字段设计规范</a><a class="headerlink" href="#id19" title="Permalink to this heading">¶</a></h5>
 <p>以YAML文件为例：</p>
-<p>所有字段名称均为英文小写单词，词语中仅有一种连接符（下划线）。
+<p>所有字段名称均为英文小写单词为主，词语中仅有一种连接符（下划线）。
 所有字符值均为列表/数组形式，哪怕只有一个取值，以方便扩展。</p>
 <p>例如：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="p">:</span>
@@ -460,13 +588,13 @@ Code</p></td>
 </section>
 </section>
 <section id="id20">
-<h3><a class="toc-backref" href="#id69" role="doc-backlink">关系</a><a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id70" role="doc-backlink">关系</a><a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h3>
 <p>自然分类法 + 文件链接。</p>
 <section id="id21">
-<h4><a class="toc-backref" href="#id70" role="doc-backlink">自然分类法</a><a class="headerlink" href="#id21" title="Permalink to this heading">¶</a></h4>
+<h4><a class="toc-backref" href="#id71" role="doc-backlink">自然分类法</a><a class="headerlink" href="#id21" title="Permalink to this heading">¶</a></h4>
 <p>“NOISNEMID自然分类法”，简称“N氏自然分类法”或“自然分类法”，是在参考 DDC（杜威十进制图书分类法）、ICS（国际标准分类法）、GB/T_13745-2009（中华人民共和国学科分类与代码简表）、中图法、胡昌志先生的《国际图书集成分类法》等分类法的基础上，结合计算机系统软件和应用软件对于文件管理、信息检索的需求特点和技术实现方式而提出的一种实用性的分类方法。</p>
 <section id="id22">
-<h5><a class="toc-backref" href="#id71" role="doc-backlink">应用场景</a><a class="headerlink" href="#id22" title="Permalink to this heading">¶</a></h5>
+<h5><a class="toc-backref" href="#id72" role="doc-backlink">应用场景</a><a class="headerlink" href="#id22" title="Permalink to this heading">¶</a></h5>
 <p>“自然分类法”主要用于：</p>
 <ol class="arabic simple">
 <li><p>基于（个人）计算机的、高效的资源文件组织、管理</p></li>
@@ -476,7 +604,7 @@ Code</p></td>
 </ol>
 </section>
 <section id="id23">
-<h5><a class="toc-backref" href="#id72" role="doc-backlink">设计目的</a><a class="headerlink" href="#id23" title="Permalink to this heading">¶</a></h5>
+<h5><a class="toc-backref" href="#id73" role="doc-backlink">设计目的</a><a class="headerlink" href="#id23" title="Permalink to this heading">¶</a></h5>
 <p>缓解“分类困难、分类焦虑”。</p>
 <p>设计该分类方法主要用于解决前述分类方法中存在的下列问题：</p>
 <ol class="arabic">
@@ -500,7 +628,7 @@ Code</p></td>
 </ol>
 </section>
 <section id="id24">
-<h5><a class="toc-backref" href="#id73" role="doc-backlink">设计思想</a><a class="headerlink" href="#id24" title="Permalink to this heading">¶</a></h5>
+<h5><a class="toc-backref" href="#id74" role="doc-backlink">设计思想</a><a class="headerlink" href="#id24" title="Permalink to this heading">¶</a></h5>
 <p>所谓“自然分类法”，即是遵循知识从产生的自然规律，即其动态性、聚类性。</p>
 <p>所谓动态性，就是其分类数量并不会天然就规定好。</p>
 <p>所谓聚类性，就是知识门类之类的联系之产生，几乎是必然的，不可避免的。从此角度上看，凡是静态的分类模式，必然是不完美的，也必然是会在使用中产生问题的。同时，知识之间的联系，最终必然会回归一处，而绝不会如树形结构一样单向的。简而言之，知识结构只能是图结构，不可能是树结构。</p>
@@ -508,9 +636,9 @@ Code</p></td>
 <p>而以上，正是自然分类法的核心概念所在。</p>
 </section>
 <section id="id25">
-<h5><a class="toc-backref" href="#id74" role="doc-backlink">应用原则</a><a class="headerlink" href="#id25" title="Permalink to this heading">¶</a></h5>
+<h5><a class="toc-backref" href="#id75" role="doc-backlink">应用原则</a><a class="headerlink" href="#id25" title="Permalink to this heading">¶</a></h5>
 <section id="id26">
-<h6><a class="toc-backref" href="#id75" role="doc-backlink">一、动态性</a><a class="headerlink" href="#id26" title="Permalink to this heading">¶</a></h6>
+<h6><a class="toc-backref" href="#id76" role="doc-backlink">一、动态性</a><a class="headerlink" href="#id26" title="Permalink to this heading">¶</a></h6>
 <p>动态性是指不限定类别名称（主题词）数量，特别是不限制一级分类的分支数量，即，不限定为十进制的十个数字，也不限定为英文字母的26个或几者的组合。</p>
 <p>欲要体现其序列关系（例如学科传承等），可通过对其元数据记录进行提取分析得出。</p>
 <p>目录的层次关系仅指示其逻辑包含关系。</p>
@@ -518,7 +646,7 @@ Code</p></td>
 <p>动静相宜：不过要注意的是，所谓动静之间，一阴一阳，相辅相成。动态性的良好实现，需要一个静态的基底，作为翻涌的动态化的知识海洋中的一条隐含的基线，就像东海龙宫中的定海神珍铁。例如，相对固定的或约定的文件名命名规则，从而方便使用脚本对文件和目录进行大规模的批量操作，包括但不限于结构调整、（元）数据检索、提取等。从这一角度上讲，动态性和灵活性互为诠释，动态性和灵活性与相对的固定性、标准化，共同在两个层次上，帮助知识管理体系的构筑，帮助整体知识框架的搭建。要明确这种“固定的约定”不是针对分类标准本身的，而是针对资源命名中的一些与内容和分类标准无关的细节的，包括不同主题词的连接符应当用下划线、连接符、点号，还是其它，以及哪些元信息应当被置于文件名中，等。</p>
 </section>
 <section id="id27">
-<h6><a class="toc-backref" href="#id76" role="doc-backlink">二、自然性</a><a class="headerlink" href="#id27" title="Permalink to this heading">¶</a></h6>
+<h6><a class="toc-backref" href="#id77" role="doc-backlink">二、自然性</a><a class="headerlink" href="#id27" title="Permalink to this heading">¶</a></h6>
 <p>自然性主要体现在主题词的生成和获取，不拘泥于具体的标准，只视使用者的使用场景、目的以及具体的图书文件而定，其主题题可以取自上述任何标准化文件。</p>
 <p>此举的深层次逻辑在于，分类标准的制订者（或群体）不可能是每个领域的专家与具体从业者，现实世界的复杂性决定每一份分类标准的制订都在其落笔之时已经落后于知识的产生。这时也许看官会注意到笔者仿佛又模糊了知识分类和书籍分类的概念，但一切以目的为准，不管是知识分类标准，还是书籍分类标准，都是为了知识体系的构建。但是千人千面，知识体系本身如同一个克苏鲁怪物，每人看到的都应当是不同的形态，或者说，其在不同人脑海中的投射，必然是其不同状态下的投影。就像一束光从上方照下来，经过一枚造型和切面复杂的镜片，镜片在三个轴上稍稍发生旋转、偏转或位移，最后在纸面上投射的光斑的颜色、形状都会不同……</p>
 <blockquote>
@@ -529,17 +657,17 @@ Code</p></td>
 <p>但，要注意到，上述不同的分类形态，并不是互斥的。也许在实体书分类操作时，不同的分类标准或在不同层次上应用不同的分类标准是不可思议的事情，但是在计算机内部使用这些分类方案并让它们共存，是非常自然而简单的事情：可以通过在分类之上再抽象一层“不同的分类模式”的目录，也可以在外部单独建立专门的分类导航目录或系统（例如由脚本生成目录快捷方式或链接，或生成不同分类的导航入口，例如以HTML的形式）。</p>
 </section>
 <section id="id28">
-<h6><a class="toc-backref" href="#id77" role="doc-backlink">三、直观性</a><a class="headerlink" href="#id28" title="Permalink to this heading">¶</a></h6>
+<h6><a class="toc-backref" href="#id78" role="doc-backlink">三、直观性</a><a class="headerlink" href="#id28" title="Permalink to this heading">¶</a></h6>
 <p>分类的名称直观体现其含义，不再是字母或数字。这不仅仅是直观，更是在操作时提倡“符合直觉”，这也与“自然”一词的字面意义与其内涵相呼应。</p>
 <p>此外，在计算机中进行快速访问时，使用英文名称可以提高导航效率。例如将“计算机”改为“Computer”，则在文件管理器获取当前焦点的情况下，快速在键盘上依次按下“c”“o”或“c”“o”“m”（一般大小写不敏感），会快速定位到该目录上。</p>
 <p>从这个角度上讲，一级目录中可以配置 676 个使用两个字母快速定位的目录名，可以配置 17576 个使用三个字母快速定位的目录名。</p>
 </section>
 </section>
 <section id="id29">
-<h5><a class="toc-backref" href="#id78" role="doc-backlink">分类实践举例与探讨</a><a class="headerlink" href="#id29" title="Permalink to this heading">¶</a></h5>
+<h5><a class="toc-backref" href="#id79" role="doc-backlink">分类实践举例与探讨</a><a class="headerlink" href="#id29" title="Permalink to this heading">¶</a></h5>
 <p>以下以一些具体的分类主题词的实操为例，进行探讨。</p>
 <section id="id30">
-<h6><a class="toc-backref" href="#id79" role="doc-backlink">文学类</a><a class="headerlink" href="#id30" title="Permalink to this heading">¶</a></h6>
+<h6><a class="toc-backref" href="#id80" role="doc-backlink">文学类</a><a class="headerlink" href="#id30" title="Permalink to this heading">¶</a></h6>
 <p>以藏书第一大品类——“文学作品”——这一人们迸发收藏图书动机的最常见品类之一为例，来探讨其下子类的分配时，可以一窥自然分类法的核心主旨所在。</p>
 <p>首先是这一主题词本身的级别问题。文学这一文本组织形式，天然便是由于其语言和文字为载体而成为书籍的第一驻民。从本质上“文学类”是不可能成为一级分类的，而诸多分类法中将其作为一级目录存在的理由可能是出于现实方便的目的。</p>
 <p>其次是其下子类的分类原则问题。分类过程中主题词的形成，源自其分类标准。但是文学作品本身却拥有着多重身份，而对于书籍分类时一个重大问题也在此时显现：文学作品自身有多重身份，使用图书的人也有多重身份，同时拥有不同的目的。</p>
@@ -547,12 +675,12 @@ Code</p></td>
 <p>相比硬盘存储，现实世界中在书架上存储图书的成本无疑是巨大的，传统图书分类法只能选择某一种分类标准加以“固化”，从而放弃动态性是对现实的妥协。</p>
 </section>
 <section id="id31">
-<h6><a class="toc-backref" href="#id80" role="doc-backlink">计算机类</a><a class="headerlink" href="#id31" title="Permalink to this heading">¶</a></h6>
+<h6><a class="toc-backref" href="#id81" role="doc-backlink">计算机类</a><a class="headerlink" href="#id31" title="Permalink to this heading">¶</a></h6>
 <p>传统图书分类法的另一个问题是其在面对不同专业以及跨专业领域的图书时，其相对单一和固定的分类标准（哪怕是学科分类法）会遭遇严峻挑战。图书分类法或ICS分类法，在触及到某个行业时，其有效性会迅速下降，同时由于某些领域知识内容的繁荣（一般是由于经济活动的繁荣），其专业、行业知识的增长（衍生或曰“涌现”）速度会迅速超越分类法主题词的规划预期，而各种预留的扩展设计，也会因其逻辑上的硬性规定而产生诸多不便或冲突，让使用者（作为部署的分类者、作为主动检索用户的读者）在使用体验或思维模式上产生被禁锢的负面感受，进而影响知识管理的效率。从这个角度上回看传统的图书分类法，在涉及专业领域的分类时，应当是由该领域的从业者来分，才显得更加合理恰当。</p>
 </section>
 </section>
 <section id="id32">
-<h5><a class="toc-backref" href="#id81" role="doc-backlink">核心要义：“无中生有”起手式</a><a class="headerlink" href="#id32" title="Permalink to this heading">¶</a></h5>
+<h5><a class="toc-backref" href="#id82" role="doc-backlink">核心要义：“无中生有”起手式</a><a class="headerlink" href="#id32" title="Permalink to this heading">¶</a></h5>
 <p>所谓无极生太极，太极生两仪……</p>
 <blockquote>
 <div><p>；）</p>
@@ -578,7 +706,7 @@ Code</p></td>
 </div></blockquote>
 </section>
 <section id="id33">
-<h5><a class="toc-backref" href="#id82" role="doc-backlink">自然分类对文件备份操作的影响</a><a class="headerlink" href="#id33" title="Permalink to this heading">¶</a></h5>
+<h5><a class="toc-backref" href="#id83" role="doc-backlink">自然分类对文件备份操作的影响</a><a class="headerlink" href="#id33" title="Permalink to this heading">¶</a></h5>
 <p>注：此小节忽略备份和同步的差异。从个人资源管理的角度，笔者更关注于文件安全性，所以与这两者相关的讨论基本上都可归类于文件备份操作的范畴。而同时，rsync的“同步模式”可以看作备份操作的一种子类型。</p>
 <p>相对较为固定的、大规模的、目录结构复杂的数据，在不使用RAID（阵列卡或NAS）时，需要使用手动的方式进行备份时，例如以rsync为代表的工具，此类工具的实现方式，决定其无法实现实时的备份或同步。要想达到实时的备份与同步，可以通过以下的一些思路实现：</p>
 <ul class="simple">
@@ -589,25 +717,25 @@ Code</p></td>
 <p>正是对于同步或备份操作中频繁调整目录结构而不调整文件时，同步软件无法智能感知的这一问题，催生了相对静态的分类标准，同时也催生了类似git的对象式文件操作形式，以及以 RAID-Z（TrueNas的好处不止这一条，其文件去重与git的实现有异曲同工之意，当然其性能开销是另一个话题了）为代表的冗余文件系统的诞生。又或者说，拓展了后者的使用场景与其技术意义的外延。</p>
 </section>
 <section id="id34">
-<h5><a class="toc-backref" href="#id83" role="doc-backlink">感想</a><a class="headerlink" href="#id34" title="Permalink to this heading">¶</a></h5>
+<h5><a class="toc-backref" href="#id84" role="doc-backlink">感想</a><a class="headerlink" href="#id34" title="Permalink to this heading">¶</a></h5>
 <p>自然分类法是自底向上的思想的实践。笔者认为知识的诞生不是自顶向下的，应是先遇到问题，再解决问题，从小向大，逐渐归纳总结才形成一门知识的。此分类法是在遇到各种问题后不断摸索实践的过程中逐渐形成的。</p>
 <p>整个N氏自然分类法其实是一条隐含的线索贯穿其中，即“符合直觉”。一切都是以人的主观直觉、对知识、对世界的直观感受作为分类的出发点和落脚点的。人的思绪如天上浮云瞬息万变，又有谁能确定，知识的海洋，是永远风平浪静、波澜不惊的呢？</p>
 </section>
 </section>
 <section id="id35">
-<h4><a class="toc-backref" href="#id84" role="doc-backlink">文件链接</a><a class="headerlink" href="#id35" title="Permalink to this heading">¶</a></h4>
+<h4><a class="toc-backref" href="#id85" role="doc-backlink">文件链接</a><a class="headerlink" href="#id35" title="Permalink to this heading">¶</a></h4>
 <p>通过 Windows 或 GNU/Linux 操作系统中的文件链接功能可以方便地将同一文件或目录应用于不同的分类框架之上，从而解决跨类、交叉等分类难题。</p>
 </section>
 <section id="id36">
-<h4><a class="toc-backref" href="#id85" role="doc-backlink">对象存储</a><a class="headerlink" href="#id36" title="Permalink to this heading">¶</a></h4>
+<h4><a class="toc-backref" href="#id86" role="doc-backlink">对象存储</a><a class="headerlink" href="#id36" title="Permalink to this heading">¶</a></h4>
 <p>从知识管理的角度，对象存储可认为是将“分类结果”以路径字符串的形式进行“表示”，并将这一字符串作为一个字段（不一定是主键）进行构筑，然后借助对象存储的技术，进行文件管理。</p>
 <p>从这个角度上讲，它可以作为文件链接的强力竞争或替代，从而从较大程度上解除了“文件管理”中“调整目录结构”与“知识管理”中“调整分类结构”之间的耦合。具体地，就是文件你随便存，反正就是相当于数据库中的一条记录，而组织结构或分类实现了统一，可以有任意多个字段用于表征不同的分类体系，只要你有精力，你可以为一条记录附加任意多个“分类结果”。届时，对不同的分类体系直接按照对应字段提取数据并实时构建可视化结构以进行预览、检索即可。</p>
 </section>
 </section>
 <section id="id37">
-<h3><a class="toc-backref" href="#id86" role="doc-backlink">方法</a><a class="headerlink" href="#id37" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id87" role="doc-backlink">方法</a><a class="headerlink" href="#id37" title="Permalink to this heading">¶</a></h3>
 <section id="id38">
-<h4><a class="toc-backref" href="#id87" role="doc-backlink">编辑器</a><a class="headerlink" href="#id38" title="Permalink to this heading">¶</a></h4>
+<h4><a class="toc-backref" href="#id88" role="doc-backlink">编辑器</a><a class="headerlink" href="#id38" title="Permalink to this heading">¶</a></h4>
 <p>VisualStudio Code（以下简称 VSCode）目前由微软主导的一款开源免费的高级纯文本编辑器，前期主要适用于前端领域代码编辑，后期开始引入语言服务器机制，使其可以用于几乎所有编程或非编程语言的编辑。同时由于其强大至极的社区和插件机制，使其成为目前最具开放性和发展前景的编辑器之一。</p>
 <p>在不建议参与“编辑器战争”相关的争论（所谓“编辑器战争”）的同时，下面会列举出VSCode所覆盖的、特别是在高强度、高频率使用中，细节上使之脱颖而出的优点，并可被作为未来编辑器的设计标准：</p>
 <p>(⭐数量表示重要程度)</p>
@@ -682,7 +810,7 @@ Code</p></td>
 </ol>
 </section>
 <section id="id39">
-<h4><a class="toc-backref" href="#id88" role="doc-backlink">工具链</a><a class="headerlink" href="#id39" title="Permalink to this heading">¶</a></h4>
+<h4><a class="toc-backref" href="#id89" role="doc-backlink">工具链</a><a class="headerlink" href="#id39" title="Permalink to this heading">¶</a></h4>
 <p>完整的工具链包含了从计算机硬件、输入输出设备、脚本编制等各方面事无巨细的设计与规定。每个人可以根据自身领域、环境进行调整。</p>
 <ol class="arabic">
 <li><p>硬件</p>
@@ -756,59 +884,67 @@ Code</p></td>
 </ol>
 </section>
 <section id="id40">
-<h4><a class="toc-backref" href="#id89" role="doc-backlink">备份</a><a class="headerlink" href="#id40" title="Permalink to this heading">¶</a></h4>
-<p>一是存储策略。要对数据进行分层分级，对于核心数据进行1+N异地存储镜像备份。</p>
+<h4><a class="toc-backref" href="#id90" role="doc-backlink">备份</a><a class="headerlink" href="#id40" title="Permalink to this heading">¶</a></h4>
+<p>一是存储策略。要对数据进行分层分级，对于极端重要的、唯一性的、不可再生的数据进行基于321原则的备份，具体为：</p>
+<blockquote>
+<div><p>至少三份备份、至少两套不同介质、至少一份异地存储。</p>
+</div></blockquote>
 <p>二是存储产品选择。可尝试的包括外接式硬盘、NAS、云存储服务。</p>
-<p>三是备份技术。可选的包括手动拷贝式（例如以rsync为代表的同步软件）、raid1镜像、RAID-Z多盘冗余，以及对象存储（及其应用）。</p>
-<p>四是本质存储时的一个注意点就是，如果采用本地NAS存储，在其资金投入方面，UPS（不间断电源）的重要性及其性价比可能需要重视起来。毕竟家庭环境下，电脑及相关设备都是相当于运行在降级模式下，其可靠性要比恒温恒湿防尘机房差。</p>
+<p>三是备份技术。可选的包括手动拷贝式（例如以rsync为代表的同步软件）、raid1镜像、RAID-Z多盘冗余，以及对象存储（及其应用）。要考虑到不同RAID级别的故障率及其在家庭运行环境下的适用性。例如RAID5其实并不适用于家庭环境，其在降级环境下遇到“双故障”的几率相当之高。</p>
+<p>四是电力保障。由于家庭环境下，电脑及相关设备都是相当于运行在降级模式下，其可靠性要比恒温恒湿防尘机房差，因此本地存储时的一个重要注意事项是：如果采用本地24小时运行的NAS存储，则需要考虑UPS（不间断电源）的重要性，因为随着运行时间增长，停电几率无限逼近100%，由于停电导致的存储硬件损坏的可能性将迅速增加。</p>
 </section>
 </section>
 <section id="id41">
-<h3><a class="toc-backref" href="#id90" role="doc-backlink">模型</a><a class="headerlink" href="#id41" title="Permalink to this heading">¶</a></h3>
-<p>重新回顾全文，发现在整体“模型”中各种层次上进行筛选时一些重要的线索：</p>
+<h3><a class="toc-backref" href="#id91" role="doc-backlink">模型</a><a class="headerlink" href="#id41" title="Permalink to this heading">¶</a></h3>
+<p>重新回顾全文，发现在整个“模型”中各种层次上进行筛选时一些重要的线索，或者详，下面的关于“模型”的详述，可以算作从其它（多个）维度来对NPKMP作一些解读。</p>
 <section id="id42">
-<h4><a class="toc-backref" href="#id91" role="doc-backlink">灵活</a><a class="headerlink" href="#id42" title="Permalink to this heading">¶</a></h4>
-<p>“灵活”这一原则在期间的高频出现。这充分体现了对于知识体系结构不断演化、变化、进化的潜在需求和预判，或者说，对于“知识”动态性的强烈暗示。</p>
+<h4><a class="toc-backref" href="#id92" role="doc-backlink">灵活</a><a class="headerlink" href="#id42" title="Permalink to this heading">¶</a></h4>
+<p>“灵活”这一原则的高频出现充分体现了对于知识体系结构不断演化、变化、进化的潜在需求和预判，或者说，对于“知识”动态性的强烈暗示。</p>
 </section>
 <section id="id43">
-<h4><a class="toc-backref" href="#id92" role="doc-backlink">妥协</a><a class="headerlink" href="#id43" title="Permalink to this heading">¶</a></h4>
+<h4><a class="toc-backref" href="#id93" role="doc-backlink">妥协</a><a class="headerlink" href="#id43" title="Permalink to this heading">¶</a></h4>
 <p>“妥协”，或曰“取舍”。</p>
-<p>NPKMP似乎仍逡巡于尝试解决认知方面的问题和误读，似乎是一种精神胜利法：在颓然地发现，目前不可能有单个软件满足这样一个哪怕是已经非常垂直、足够基础的领域的的功能需求的背景下，个人能力所限又不能制作一款 All-in-one 软件，不得不进行取舍并称此种解决思路为“降维”，于是，（至少在可预见的一个较长的时期内），（暂时）（彻底）放弃寻找一款 All-in-one 的笔记软件，转而通过对当前能够找到的在个人知识管理流程中所涉及的各自的子领域内“术业有专攻”的工具软件，然后进行功能流程的组合和数据的打通。</p>
-<p>《如何应对必然的遗忘》（ <a class="reference external" href="https://www.huacishu.com/2022/06/25/half-of-the-puzzle/">https://www.huacishu.com/2022/06/25/half-of-the-puzzle/</a> ） 一文结论：</p>
+<p>一是“工具链”来源于对于AIO无法实现的妥协。完美的解决方案之一，是一款能够将所有笔记管理需求一网打尽的系统化软件。但是显然在较长的一个时期内，这是不可能的。因此只能采取“工具链”的形式，放弃寻找一款 All-in-one 的笔记软件，而是将个人知识管理流程中所涉及的各个实体的操作，交由该领域内的专门软件来处理，然后进行功能流程的组合和数据的打通。</p>
+<p>二是对人类大脑的妥协。《如何应对必然的遗忘》（ <a class="reference external" href="https://www.huacishu.com/2022/06/25/half-of-the-puzzle/">https://www.huacishu.com/2022/06/25/half-of-the-puzzle/</a> ） 一文结论：</p>
 <blockquote>
 <div><p>在重视“整理”后，复习的重要性也就被削弱了，因为：</p>
 <p>1）如果内容”再学习“的成本被降低，那么遗忘就不再可怕</p>
 <p>2）如果内容能够被快速检索与查阅，那么全程记在脑子里就不重要了，需要时再查出来就好</p>
 </div></blockquote>
-<p>很有感触。“认知改变一切”，严密的说法就是“对同一个事物的不同认知结果的不同，不管是性质还是层次上的，有极大可能造成对其处理的偏差”。</p>
-<p>例如文件系统：最初操作系统是没有树形文件系统的，早期操作系统中，文件被简单地组织为一个线性列表或平坦的命名空间。文件之间的关系和层次结构并没有明确的表示。后来才引入了树形的文件系统。但这时就有一个最根本的问题了：一是这个树形文件系统本质上是一种对于存储、计算等成本和效率的妥协，它属于一种取舍，或者说树形目录是操作系统作者（或者负责文件管理部分的程序员）“强加”给用户的一种认知。如果一开始制作文件系统的程序员采用了数据库形式来存储文件，那么元数据以数据库字段的方式与操作系统紧密融合 ，也许会有不一样的发展现状。（参考对象存储技术）。</p>
+<p>很有感触。</p>
+<p>“认知改变一切。不管是性质还是层次上的认知差异，都会造成对同一事物处理方式的巨大不同”。</p>
+<blockquote>
+<div><p>例如文件系统：最初操作系统是没有树形文件系统的，早期操作系统中，文件被简单地组织为一个线性列表或平坦的命名空间。文件之间的关系和层次结构并没有明确的表示。后来才引入了树形的文件系统。但这时就有一个最根本的问题了：一是这个树形文件系统本质上是一种对于存储、计算等成本和效率的妥协，它属于一种取舍，或者说树形目录是操作系统作者（或者负责文件管理部分的程序员）“强加”给用户的一种认知。如果一开始制作文件系统的程序员采用了数据库形式来存储文件，那么元数据以数据库字段的方式与操作系统紧密融合 ，也许会有不一样的发展现状。（参考对象存储技术）。</p>
 <p>从这个角度来看，“树形目录功能”是“文件的树形结构关系”的一种程序实现，它包括了对树结构的存储和交互接口。当然从更加本质的角度来讲，几乎所有关于树的实现都是残缺的，只留下了最重要的一些与树结构的交互功能。同样的情形也发生在“标签功能”上，甚至对“标签功能”的实现要更糟糕。按理说（也不知道哪个理）没有任何对于文件关系的映射（树、或其它结构，例如标签其实应该是网状结构吧）能够完美实现，至少在必须要对数据和算法进行二进制落地化的当代计算机架构基础上，是几乎不可能的。因为二进行数据本质是一种顺序存储结构，从这个角度上，就是一种“Casting（铸造）”，就是将某些东西硬生生为了某种需要改变它的样貌——将树结构硬生生用二进制来表示。</p>
 <p>“寻找一种树结构的实现”曾长久困扰笔者，因笔者一直在寻找一种天然存在的“树”，盖因在思考算法和实现时，笔者总是跳过树的实现/表示这一环节，抽象形式的树（树是一种关系，一种描述，它是非实体的）和实际存在的树（注意不是树的表示或实现，而是真实存在的树，或者说，需要计算机的硬件本身就是按照树的结构来制造的，虽然目前存储芯片，如内存、SSD等是按照抽象层次进行分层化的地址进行访问的，制造工艺和寻址方面也有这些因素在里面，但和我们所认知的树结构还是有很大不同的）深深的交融、混合、重影，在脑海中被“混为一谈”。终于在一本老掉牙的数据库书里（好像是探讨ms sqlserver的）看到一句话，大受震撼。大致是说，“树的字段表示，是一种序列化/实体化”……可能有所偏差但是却是让笔者窥见了一丝可能、或明悟、或……误解：那么，换言之，这就是一种妥协喽；再换言之，路径（绝对路径）被用于定位一个唯一的文件，这是什么？这不就是一种字段吗，相当于“主键”。从性能角度上讲，必然要有一种取舍。计算机的世界里，仿佛总是存在着无数的取舍、妥协……</p>
 <p>进而，树结构也好，网结构也好，哪怕真实存在，又会有多少区别呢？任何一种都无法完美再现知识的本质。它们都只是“知识体”的一个断面，一种时空的投影，一瞬间的一个张快照。“知识体”，就像一个不断变化形态、结构、外壳的存在于无数时空里的巨大水母，它不停地扭动着身躯，然后体态的变化在不同的维度中投影也在时刻改变着……。</p>
 <p>（但树就在哪里，任何时空断面都不是树本身）而（（受限于生物学大脑机能的）人类）却将它某个时空的断面，当作了它的永恒与本体。</p>
 <p>扯远……</p>
+</div></blockquote>
 <p>如此回看《如何应对必然的遗忘》最后的结论，是不是隐隐嗅到了妥协的味道？！</p>
 <blockquote>
 <div><p>（对人类大脑机能的妥协……哈哈）</p>
 <p>；）</p>
 </div></blockquote>
-<p>对于知识管理或笔记的认知，如果意识到这里面无处不在的妥协，那么对于完美主义的偏执，及由此造成的焦虑，仿佛也变得不是不能理解、不是不能被接受……</p>
-<p>而这种“认知行为”（认为‘认知会改变一些事情’ ，以及认为‘到处都是妥协’） ，却又何尝不是“妥协”。然后上述长篇大论更像是对这种妥协的无力辩护。</p>
+<p>妥协的积极意义在于缓解了对完美追求所导致的焦虑。当然整个NPKMP更像是对这种妥协的无力辩护。</p>
 <p>完美闭环。</p>
 </section>
 <section id="id44">
-<h4><a class="toc-backref" href="#id93" role="doc-backlink">可检索化</a><a class="headerlink" href="#id44" title="Permalink to this heading">¶</a></h4>
-<p>循环，分形，同构。不止体现在目录结构构建原则上，工具更新换代与选择上，也体现在对于知识管理本身及NPKMP本身。</p>
+<h4><a class="toc-backref" href="#id94" role="doc-backlink">一切皆文本（一切信息可检索）</a><a class="headerlink" href="#id44" title="Permalink to this heading">¶</a></h4>
+<p>应当是受“一切皆文件”的影响，虽然UNIX哲学还在一些争论，但在PKM领域，笔者觉得，“一切皆文本”源于对信息可检索性的强烈需求。</p>
+</section>
+<section id="id45">
+<h4><a class="toc-backref" href="#id95" role="doc-backlink">分形</a><a class="headerlink" href="#id45" title="Permalink to this heading">¶</a></h4>
+<p>同构化的目录构建原则其实是分形的思想。应该说这是非常直观了。</p>
+</section>
+<section id="id46">
+<h4><a class="toc-backref" href="#id96" role="doc-backlink">迭代</a><a class="headerlink" href="#id46" title="Permalink to this heading">¶</a></h4>
 <p>这期间一个重要的指南针就是“可检索化”，或曰“文本化”。例如，前面提到VSCode的检索结果可以文本化。引申之后，可对“笔记使用行为”本身进行文本化，用于分析知识管理这一行为本身，这应该属于创造学范畴，具体地设想是用于科研人员回顾、反思、回溯、突破瓶颈之用。</p>
 </section>
 </section>
 </section>
-<section id="id45">
-<h2><a class="toc-backref" href="#id94" role="doc-backlink">后记</a><a class="headerlink" href="#id45" title="Permalink to this heading">¶</a></h2>
-<p>最后，如果说知识是人类能够在当前地球上能够有所立足的最根本和宝贵的倚仗之一，那么知识管理、对知识管理的研究、知识管理工具的研发，便是能够使得知识这一工具能够更加高效、有力的重要催化剂。</p>
-</section>
 <section id="indices-and-tables">
-<h2><a class="toc-backref" href="#id95" role="doc-backlink">索引表 / Indices and tables</a><a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id97" role="doc-backlink">索引表 / Indices and tables</a><a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
@@ -829,18 +965,20 @@ Code</p></td>
 <li><a class="reference internal" href="#">NPKMP个人知识管理计划详解：后互联网时代个人知识管理刍议</a><ul>
 <li><a class="reference internal" href="#tldr">速览（TLDR）</a></li>
 <li><a class="reference internal" href="#id1">声明、提示</a></li>
-<li><a class="reference internal" href="#id2">名词</a></li>
-<li><a class="reference internal" href="#id3">核心概念</a></li>
-<li><a class="reference internal" href="#id4">背景：懵懂探索与尝试总结</a><ul>
-<li><a class="reference internal" href="#id5">后互联网时代的信息化的阻滞</a></li>
-<li><a class="reference internal" href="#id6">懵懂探索</a></li>
-<li><a class="reference internal" href="#id7">尝试、思考和提炼</a></li>
+<li><a class="reference internal" href="#id2">楔子</a></li>
+<li><a class="reference internal" href="#id3">演绎</a><ul>
+<li><a class="reference internal" href="#id4">定义</a></li>
+<li><a class="reference internal" href="#id5">公理</a></li>
+<li><a class="reference internal" href="#id6">定理</a></li>
+<li><a class="reference internal" href="#id7">推论</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id8">关于个人知识管理的系统化构想</a><ul>
-<li><a class="reference internal" href="#id9">系统化思维概述</a></li>
-<li><a class="reference internal" href="#id10">认知</a></li>
-<li><a class="reference internal" href="#id11">实体</a></li>
+<li><a class="reference internal" href="#id8">理论</a><ul>
+<li><a class="reference internal" href="#id9">实体</a><ul>
+<li><a class="reference internal" href="#id10">纯文本</a></li>
+<li><a class="reference internal" href="#id11">二进制数据</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#id12">关系</a></li>
 <li><a class="reference internal" href="#id13">方法</a></li>
 <li><a class="reference internal" href="#id14">模型</a></li>
@@ -851,7 +989,7 @@ Code</p></td>
 <li><a class="reference internal" href="#restructuredtext-rst">reStructuredText (rST)</a></li>
 <li><a class="reference internal" href="#yaml">YAML</a></li>
 <li><a class="reference internal" href="#rst">rST实施细节</a><ul>
-<li><a class="reference internal" href="#id17">工程同构目录结构规范</a></li>
+<li><a class="reference internal" href="#id17">同构化的工程目录结构规范</a></li>
 <li><a class="reference internal" href="#id18">文件名规范</a></li>
 <li><a class="reference internal" href="#id19">字段设计规范</a></li>
 </ul>
@@ -892,12 +1030,13 @@ Code</p></td>
 <li><a class="reference internal" href="#id41">模型</a><ul>
 <li><a class="reference internal" href="#id42">灵活</a></li>
 <li><a class="reference internal" href="#id43">妥协</a></li>
-<li><a class="reference internal" href="#id44">可检索化</a></li>
+<li><a class="reference internal" href="#id44">一切皆文本（一切信息可检索）</a></li>
+<li><a class="reference internal" href="#id45">分形</a></li>
+<li><a class="reference internal" href="#id46">迭代</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id45">后记</a></li>
 <li><a class="reference internal" href="#indices-and-tables">索引表 / Indices and tables</a></li>
 </ul>
 </li>
