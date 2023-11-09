@@ -64,11 +64,12 @@ img {
 }
 
 /* side-toc/nav-bar fix */
-/* deprecated for long toc trees cause a problem that the toc tree was not displayed completely */
-/* div.sphinxsidebar {
+div.sphinxsidebar {
   position: fixed;
   right: 80px;
-} */
+  height: 90%;
+  overflow-y: auto;
+} 
 
 /* round corner table trick begin*/
 
